@@ -1,0 +1,9 @@
+# Hearbe order history read test (user-perspective)
+# Flow:
+# - App starts -> /main -> session gate redirects to /C|/A|/B/mall (logged-in users)
+# - Navigate to order history
+# - When prompted, answer "네" to read the summary
+
+주문 내역으로 이동
+네
+

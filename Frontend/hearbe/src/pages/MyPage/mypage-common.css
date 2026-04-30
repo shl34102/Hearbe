@@ -1,0 +1,213 @@
+.mypage-container {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: #f8f9fb;
+    font-family: 'Pretendard', sans-serif;
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    position: relative;
+}
+
+.mypage-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    gap: 2rem;
+    width: 95%;
+    flex: 1;
+}
+
+.mall-header-c {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-bottom: none;
+    transition: all 0.3s ease;
+}
+
+.header-left-c {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.title-area-c {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-right-c {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-item-c {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-item-c:hover {
+    transform: translateY(-2px);
+}
+
+.nav-icon-c {
+    width: 60px;
+    height: 60px;
+    background: #8B5CF6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.2);
+    transition: all 0.2s ease;
+}
+
+.nav-item-c span {
+    font-size: 14px;
+    font-weight: 800;
+    color: #64748b;
+}
+
+.mypage-sidebar {
+    width: 13rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    flex-shrink: 0;
+}
+
+.sidebar-profile-card {
+    background: white;
+    padding: 1.5rem 1rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+}
+
+.sidebar-avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+    background: #f5f3ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.sidebar-profile-info {
+    margin-bottom: 0.4rem;
+}
+
+.sidebar-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0;
+    margin-bottom: 0.4rem;
+}
+
+.sidebar-badge {
+    background: #7c3aed;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.sidebar-welcome {
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.sidebar-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.mp-sidebar-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mp-sidebar-item.active {
+    color: #7c3aed;
+    background: white;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.mp-sidebar-item:not(.active) {
+    color: #9ca3af;
+    background: transparent;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.mp-sidebar-item .label {
+    font-size: inherit;
+}
+
+.mypage-content {
+    flex: 1;
+}
+
+.content-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f3f4f6;
+}
+
+.dashboard-card.full-height {
+    min-height: 500px;
+}
+
+.card-title-lg {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 1.2rem 0;
+}

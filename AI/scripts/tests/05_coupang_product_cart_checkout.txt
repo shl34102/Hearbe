@@ -1,0 +1,21 @@
+# Coupang: product -> cart -> checkout-entry regression test
+#
+# Goals
+# - Search and enter a product
+# - Read product info (read pipeline)
+# - Add to cart (act pipeline)
+# - Enter checkout page from cart (do NOT finalize order)
+#
+# Guardrails
+# - Say "결제해" only once in this script. A second "결제해" can open the 2nd-password keypad.
+#
+# delay_ms=25000
+# extra_runtime_sec=240
+
+쿠팡으로 이동
+생수 검색해줘
+2번째 상품 들어줘
+상품 정보 읽어줘
+장바구니에 담아줘
+장바구니로 이동
+결제해

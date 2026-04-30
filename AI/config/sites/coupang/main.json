@@ -1,0 +1,16 @@
+{
+  "page_type": "main",
+  "url_pattern": "^https://www\\.coupang\\.com/?$",
+  "description": "쿠팡 메인 페이지",
+  "selectors": {
+    "search_input": "input[name=\"q\"]",
+    "search_button": "button.headerSearchBtn",
+    "cart_link": "#wa-cart-link",
+    "my_coupang": "#wa-mycoupang-link",
+    "bookmark": "#wa-bookmark",
+    "login_link": "a[title=\"로그인\"]",
+    "signup_link": "a[title=\"회원가입\"]",
+    "next_product": "a[title=\"다음 상품 보기\"]",
+    "category_menu": ".gnb-menu-btn"
+  }
+}

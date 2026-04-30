@@ -1,0 +1,144 @@
+{
+  "success": true,
+  "buttons": [
+    {
+      "type": "button",
+      "text": "배송지 변경",
+      "selector": "button.twc-cursor-pointer",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "변경",
+      "selector": "button.twc-cursor-pointer",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "입력",
+      "selector": "button.twc-cursor-pointer",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "전액사용",
+      "selector": "button.twc-cursor-pointer",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "보기",
+      "selector": "button.twc-cursor-pointer",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "결제하기",
+      "selector": "button.twc-cursor-pointer",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "react-select-2-input",
+      "selector": "#react-select-2-input",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "",
+      "selector": "input[type=\"text\"]:nth-of-type(2)",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "주문/결제\n주문결제\n주문완료",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "배송지\n | \n김재환\n배송지 변경\n기본배송지\n로켓프레시 가능\n로켓와우 가능\n경상북도 구미시",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "기본배송지",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "로켓프레시 가능",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "로켓와우 가능",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "배송 요청사항\n변경\n문 앞",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "결제수단\n쿠페이 머니: 213원\n최대 캐시적립\n계좌이체\n하나은행 / **********60",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "최대 캐시적립",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "하나은행 / **********6007",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "다른 결제 수단",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "현금영수증\n입력\n01035417257 (소득공제)",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "내일(목) 1/22 도착 보장\n다른 도착일\n선택하기\n베베숲 오리진 유아물티슈 캡형, 50g",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "최종 결제 금액\n총 상품 가격\n12,900원\n배송비\n0원\n쿠팡캐시\n전액사용\n-\n원\n잔여 :",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "하나은행 / **********6007\n기본 결제 수단으로 사용",
+      "selector": "[class*=\"checkout\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "기본 결제 수단으로 사용",
+      "selector": "[class*=\"checkout\"]",
+      "visible": true
+    }
+  ],
+  "count": 23
+}

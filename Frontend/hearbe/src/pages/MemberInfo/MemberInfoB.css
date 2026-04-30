@@ -1,0 +1,463 @@
+/* Member Info Page Styles */
+/* body 배경색은 index.css에서 중앙 관리 */
+
+.memberinfo-container {
+    min-height: 100vh;
+    background-color: #141C29;
+    padding: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.memberinfo-logo-left {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    width: 320px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Back Button Override */
+.memberinfo-container .global-back-button.arrow-only {
+    left: clamp(20px, 5vw, 40px);
+    top: clamp(20px, 5vw, 40px);
+}
+
+.memberinfo-container .global-back-button.arrow-only .back-arrow-svg {
+    width: clamp(40px, 10vw, 80px);
+    height: clamp(40px, 10vw, 80px);
+}
+
+.memberinfo-container .memberinfo-content {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    /* 사이드바 포함 전체 너비 축소 */
+    min-height: 80vh;
+    margin: 0 auto;
+    padding: 20px 40px 60px;
+    /* 상단 여백 조절 */
+    box-sizing: border-box;
+    flex: 1;
+}
+
+/* Sidebar Navigation - C형 스타일로 카드화 */
+.memberinfo-sidebar {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* C형의 프로필 카드를 생략하고 바로 메뉴가 오도록 함 */
+.sidebar-menu-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-item {
+    font-size: 32px;
+    font-weight: 950;
+    color: #FFF064;
+    padding: 20px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Pretendard', sans-serif;
+    text-align: left;
+    border: none;
+    background: transparent;
+    line-height: 1.3;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(255, 240, 100, 0.1);
+}
+
+.sidebar-item.active {
+    background-color: #FFF064;
+    color: #141C29;
+}
+
+/* Main Content - 카드 형태로 묶음 */
+.memberinfo-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 48px;
+    font-weight: 950;
+    color: #FFF064;
+    margin-bottom: 30px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Member Info Box - Row 스타일 개선 (C형 dashboard-card 테마) */
+.member-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.member-info-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    background-color: rgba(255, 240, 100, 0.03);
+    /* 아주 연한 배경 */
+    border: 3px solid rgba(255, 240, 100, 0.2);
+    border-radius: 24px;
+}
+
+.member-col-left {
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+}
+
+.member-col-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.member-label {
+    font-size: 30px;
+    font-weight: 800;
+    color: #FFF064;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.member-value {
+    font-size: 34px;
+    font-weight: 900;
+    color: #FFF064;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Password Wrapper */
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: clamp(12px, 2vw, 20px);
+}
+
+.password-change-btn {
+    background-color: #FFF064;
+    color: #1E2A3A;
+    border: none;
+    border-radius: clamp(6px, 1.5vw, 12px);
+    padding: clamp(6px, 1.5vw, 12px) clamp(16px, 3vw, 24px);
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+/* Logout Section */
+.logout-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.logout-link {
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-weight: bold;
+    color: #FFF064;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    transition: opacity 0.2s;
+}
+
+.logout-link:hover {
+    opacity: 0.8;
+}
+
+
+
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    padding: clamp(60px, 10vw, 100px);
+    color: #FFF064;
+}
+
+.spinner {
+    width: clamp(40px, 8vw, 60px);
+    height: clamp(40px, 8vw, 60px);
+    border: clamp(4px, 1vw, 6px) solid #FFF064;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto clamp(20px, 4vw, 30px);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-state p {
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: bold;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Error State */
+.error-state {
+    text-align: center;
+    padding: clamp(60px, 10vw, 100px);
+    color: #FFF064;
+}
+
+.error-message {
+    font-size: clamp(20px, 3.5vw, 28px);
+    font-weight: 900;
+    margin-bottom: clamp(10px, 2vw, 16px);
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.error-detail {
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: #FFF064;
+    margin-bottom: clamp(20px, 4vw, 30px);
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.retry-btn {
+    padding: clamp(12px, 2.5vw, 18px) clamp(24px, 4vw, 36px);
+    background-color: #FFF064;
+    color: #1E2A3A;
+    border: none;
+    border-radius: clamp(8px, 2vw, 12px);
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    transition: opacity 0.2s;
+}
+
+.retry-btn:hover {
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .memberinfo-container .memberinfo-content {
+        flex-direction: column;
+
+        .memberinfo-container .memberinfo-content {
+            min-width: 0;
+        }
+    }
+
+    .memberinfo-sidebar {
+        flex: none;
+    }
+
+    .table-row {
+        grid-template-columns: 1fr;
+    }
+
+    .table-label {
+        border-right: none;
+        border-bottom: clamp(3px, 0.6vw, 6px) solid #FFF064;
+    }
+
+    .memberinfo-container .memberinfo-content {
+        min-width: 0;
+    }
+}
+
+/* MyPage Top Bar */
+.mypage-topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 40px 0;
+    margin-bottom: 30px;
+}
+
+.mypage-topbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    color: #FFF064;
+    margin: 0;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.mypage-topbar-actions {
+    display: flex;
+    gap: 30px;
+}
+
+.topbar-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    color: #FFF064;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 21px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.topbar-action:hover {
+    background-color: rgba(255, 240, 100, 0.12);
+}
+
+/* =========================================
+   Modal Styles (Custom Password Prompt)
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 42, 58, 0.8);
+    /* #1E2A3A with opacity */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(8px, 2vw, 16px);
+    backdrop-filter: blur(5px);
+}
+
+.modal-box {
+    width: clamp(300px, 90vw, 600px);
+    background-color: #121521;
+    border: clamp(2px, 0.5vw, 4px) solid #FFF064;
+    border-radius: clamp(12px, 2vw, 20px);
+    padding: clamp(24px, 4vw, 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(16px, 3vw, 24px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.modal-title {
+    font-size: clamp(40px, 8vw, 56px) !important;
+    font-weight: 900;
+    color: #FFF064 !important;
+    text-align: center;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    margin-bottom: 0 !important;
+}
+
+.modal-desc {
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: bold;
+    color: #FFF064;
+    text-align: center;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    margin-bottom: clamp(10px, 2vw, 20px);
+    line-height: 1.5;
+}
+
+.modal-input {
+    width: 100%;
+    border: clamp(2px, 0.4vw, 3px) solid #FFF064;
+    border-radius: clamp(8px, 1.5vw, 12px);
+    padding: clamp(12px, 2.5vw, 18px);
+    font-size: clamp(18px, 3.5vw, 28px);
+    background-color: #1E2A3A;
+    color: #FFF064;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+}
+
+.modal-input::placeholder {
+    color: rgba(255, 240, 100, 0.5);
+}
+
+.modal-actions {
+    display: flex;
+    gap: clamp(12px, 2vw, 20px);
+    width: 100%;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: clamp(12px, 2.5vw, 18px);
+    border-radius: clamp(8px, 1.5vw, 12px);
+    font-size: clamp(18px, 3.5vw, 24px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    border: none;
+    transition: opacity 0.2s;
+}
+
+.modal-btn.cancel {
+    background-color: transparent;
+    border: clamp(2px, 0.4vw, 3px) solid #FFF064;
+    color: #FFF064;
+}
+
+.modal-btn.confirm {
+    background-color: #FFF064;
+    color: #1E2A3A;
+}
+
+.modal-btn:hover {
+    opacity: 0.9;
+}

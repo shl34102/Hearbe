@@ -1,0 +1,191 @@
+﻿.select-mall-a-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #141C29;
+    color: #FFF064;
+    font-family: 'Pretendard', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.select-mall-a-logo {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    width: 320px;
+    height: auto;
+    z-index: 10;
+}
+
+.select-mall-a-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px 0;
+}
+
+.header-actions-a {
+    display: flex;
+    gap: 30px;
+}
+
+.header-btn-a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #FFF064;
+    font-weight: 900;
+    font-size: 21px;
+    gap: 6px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+.header-btn-a:hover {
+    background: rgba(255, 240, 100, 0.1);
+}
+
+.select-mall-a-main {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+.mall-list-a {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.mall-item-a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px 45px;
+    background: rgba(255, 240, 100, 0.03);
+    border: 4px solid #FFF064;
+    border-radius: 36px;
+    gap: 35px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.mall-item-a:hover {
+    transform: scale(1.02);
+    background: rgba(255, 240, 100, 0.08);
+}
+
+.mall-item-a.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #334155;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.mall-item-a.disabled:hover {
+    transform: none;
+}
+
+.mall-item-a.disabled .mall-logo-img-a {
+    filter: grayscale(1);
+    opacity: 0.1;
+    /* 로고를 아주 희미하게 */
+}
+
+.mall-item-a.disabled .mall-name-a {
+    color: #475569;
+}
+
+.mall-num-a {
+    width: 85px;
+    height: 85px;
+    min-width: 85px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 950;
+    color: #141C29;
+}
+
+.mall-info-a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.mall-logo-img-a {
+    height: 65px;
+    max-width: 240px;
+    object-fit: contain;
+}
+
+.mall-name-a {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.mall-arrow-a {
+    font-size: 60px;
+    font-weight: 950;
+    opacity: 0.7;
+}
+
+.select-mall-a-footer {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255, 240, 100, 0.6);
+    background-color: #141C29;
+    /* 배경색 일치 */
+    border: none !important;
+    /* 선 제거 */
+}
+
+@media (max-width: 768px) {
+    .select-mall-a-logo {
+        position: static;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .select-mall-a-header {
+        justify-content: center;
+    }
+
+    .mall-item-a {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .mall-num-a {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        font-size: 40px;
+    }
+
+    .mall-logo-img-a {
+        height: 50px;
+    }
+
+    .mall-name-a {
+        font-size: 28px;
+    }
+}

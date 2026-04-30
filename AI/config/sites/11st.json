@@ -1,0 +1,36 @@
+{
+    "site_id": "11st",
+    "name": "11번가",
+    "domains": [
+        "11st.co.kr",
+        "www.11st.co.kr"
+    ],
+    "urls": {
+        "home": "https://www.11st.co.kr/",
+        "login": "https://login.11st.co.kr/login/Login.tmall",
+        "cart": "https://www.11st.co.kr/cart/CartAction.tmall"
+    },
+    "selectors": {
+        "search": {
+            "input": "#AKCKwd",
+            "button": "#AKCSchBtn",
+            "submit_key": "Enter"
+        },
+        "login": {
+            "id_input": "#loginName",
+            "password_input": "#passWord",
+            "submit_button": "#loginBtn"
+        },
+        "cart": {
+            "button": ".cart_btn, a[href*='cart']"
+        },
+        "product": {
+            "add_to_cart": "#addCart",
+            "buy_now": "#buyNow"
+        }
+    },
+    "patterns": {
+        "search_page": "/search/",
+        "product_page": "/products/"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "site_id": "naver",
+  "name": "네이버쇼핑",
+  "domains": [
+    "shopping.naver.com",
+    "search.shopping.naver.com"
+  ],
+  "urls": {
+    "home": "https://shopping.naver.com/",
+    "search": "https://search.shopping.naver.com/search/all"
+  },
+  "pages": ["main", "search", "product"]
+}

@@ -1,0 +1,18 @@
+{
+  "page_type": "orderlist",
+  "url_pattern": "mc\\.coupang\\.com/ssr/desktop/order/list",
+  "description": "쿠팡 주문 목록 페이지",
+  "selectors": {
+    "search_input": "#headerSearchKeyword",
+    "order_search_input": "input[placeholder*='주문한 상품을 검색']",
+    "order_list_item": "a[href*='/ssr/desktop/order/']",
+    "order_detail_link": "a[href*='/ssr/desktop/order/']",
+    "add_to_cart": "button:has-text('장바구니 담기')",
+    "track_delivery": "button:has-text('배송 조회')",
+    "exchange_return": "button:has-text('교환, 반품 신청')",
+    "write_review": "button:has-text('리뷰 작성하기')",
+    "contact_seller": "button:has-text('판매자 문의')",
+    "prev_page": "button:has-text('이전')",
+    "next_page": "button:has-text('다음')"
+  }
+}

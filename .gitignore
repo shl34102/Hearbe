@@ -1,0 +1,595 @@
+# ============================================================================
+# 프로젝트: 시각장애인 웹 쇼핑 지원 플랫폼
+# 기술 스택: Spring Boot, React, FastAPI, Python AI, MCP Desktop App
+# ============================================================================
+
+# ============================================================================
+# AI Code Assistant Tools (Claude Code, Gemini, Codex 등)
+# ============================================================================
+.claude/
+.gemini/
+.codex/
+.cursor/
+.github-copilot/
+.tabnine/
+.codeium/
+.antigravity/
+.aider/
+.continue/
+.sourcegraph/
+*.ai-cache
+.ai/
+.anthropic/
+.agent/
+agents.toml
+.multi_agent
+
+# ============================================================================
+# Python / FastAPI / AI 서버
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# AI/ML specific
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+models/
+checkpoints/
+wandb/
+mlruns/
+runs/
+tensorboard/
+*.tfrecord
+
+# Hugging Face
+transformers_cache/
+huggingface_cache/
+.cache/huggingface/
+
+# ============================================================================
+# Java / Spring Boot
+# ============================================================================
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+!gradle-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+!Backend/MCPDesktop_1.0.0.zip
+
+# virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle
+**/build/
+!src/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# Spring Boot
+spring-shell.log
+derby.log
+
+# Application properties (보안을 위해 제외)
+application-*.yml
+application-*.yaml
+application-*.properties
+!application-example.yml
+!application-example.yaml
+!application-example.properties
+
+# ============================================================================
+# Node.js / React / Frontend
+# ============================================================================
+
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Yarn PnP (Plug'n'Play)
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Vite
+dist-ssr
+**/.vite/
+
+# Lerna
+lerna-debug.log*
+
+# Visual Studio
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+.next/
+out/
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# Local env files
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+
+# Vercel
+.vercel
+
+# Turbo
+.turbo
+
+# Storybook
+storybook-static
+
+# Bundle analyzer
+.next/analyze
+
+# ============================================================================
+# Database
+# ============================================================================
+
+# MySQL
+*.sql
+*.sql.gz
+mysql-data/
+!exec/*.sql
+
+# PostgreSQL
+*.pgsql
+postgres-data/
+
+# Redis
+dump.rdb
+appendonly.aof
+redis-data/
+
+# MongoDB
+*.bson
+
+# H2
+*.mv.db
+*.trace.db
+
+# ============================================================================
+# IDE / Editor
+# ============================================================================
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.idea_modules/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# ============================================================================
+# OS
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# Docker
+# ============================================================================
+docker-compose.override.yml
+.docker/
+*.dockerignore
+
+# ============================================================================
+# Logs
+# ============================================================================
+logs/
+*.log
+*.log.*
+log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================================
+# Temporary files
+# ============================================================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+tmp/
+temp/
+
+# ============================================================================
+# Security / Credentials
+# ============================================================================
+*.pem
+*.key
+*.p12
+*.crt
+*.cer
+secrets/
+credentials/
+.secrets/
+.credentials/
+config/secrets/
+application-secret.yml
+application-secret.yaml
+application-secret.properties
+
+# ============================================================================
+# MCP Desktop App Specific
+# ============================================================================
+MCP/logs/
+MCP/session.json
+MCP/config.env
+MCP/chrome_profile/
+AI/chrome_profile/
+MCP/.mcp_chrome_profile/
+MCP/user_data_dir/
+MCP/playwright-state/
+AI/.cdp_profile/
+AI/.venv_ocr311/
+
+# ============================================================================
+# Backup files
+# ============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+backup/
+backups/
+
+# ============================================================================
+# Documentation build outputs
+# ============================================================================
+docs/_build/
+docs/site/
+site/
+_site/
+
+# ============================================================================
+# Package managers lock files (선택적)
+# 팀 정책에 따라 주석 처리/해제
+# ============================================================================
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ============================================================================
+# 프로젝트 특정 파일
+# ============================================================================
+# 업로드된 파일
+uploads/
+upload/
+static/uploads/
+
+# 생성된 파일
+generated/
+gen/
+
+# 루트 output 디렉토리 (생성된 이미지/JSON 결과물)
+output/
+
+# AI 서비스 내 output 디렉토리 (OCR 테스트 결과물)
+AI/**/output/
+
+# 테스트 이미지
+AI/wellFare_test_image.jpg
+
+# MCPDesktop 바이너리 디렉토리 (zip 파일은 유지)
+Backend/MCPDesktop_1.0.0/
+
+# 테스트 데이터
+test-data/
+test_data/
+sample_data/
+
+# 캐시
+.cache/
+cache/
+*.cache
+
+# ============================================================================
+# AI 서버 추가 항목 (AI/.gitignore 통합)
+# ============================================================================
+*.bin
+*.onnx
+session.json
+sessions/
+
+nul
+
+# Ignore local AI_next workspace
+AI_next/
+
+
+**/*service-account*.json
+**/*gcp*.json
+**/*google*account*.json
+
+# Ignore all wav by default
+*.wav
+
+# Allow only curated samples
+!AI/services/tts/samples/*.wav
+!Frontend/hearbe/src/assets/audio/guide/*.wav
+!Frontend/hearbe/src/assets/audio/intro/*.wav
+Backend/src/main/resources/application.properties
+
+google-service-account.json
+docker
+
+MCP/temp_test_profile/**
+Frontend/hearbe/.env.production
+
+# Keep only one dummy file in frontend downloads directory
+!Frontend/hearbe/public/downloads/
+Frontend/hearbe/public/downloads/*
+!Frontend/hearbe/public/downloads/DOWNLOADS_DUMMY.txt
+!Frontend/hearbe/public/downloads/voice-program-version.json
+
+
+# Jira 자동화 스크립트 전체 (내부 툴 - GitHub 업로드 불필요)
+Jira/

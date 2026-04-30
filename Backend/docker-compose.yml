@@ -1,0 +1,97 @@
+services:
+  hearbe-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hearbe-backend
+    ports:
+      - "${COMPOSE_HOST_PORT}:8080"
+    env_file:
+      - .env
+    environment:
+      - SPRING_PROFILES_ACTIVE=${COMPOSE_APP_PROFILE:-dev}
+      - LOG_PATH=/logs
+    volumes:
+      - ${COMPOSE_HOST_LOG_PATH:-./logs}:/logs
+    depends_on:
+      - hearbe-mariadb
+      - hearbe-redis
+  hearbe-mariadb:
+    image: mariadb:latest
+    container_name: hearbe-mariadb
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+  hearbe-phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: hearbe-phpmyadmin
+    env_file:
+      - .env
+    ports:
+      - "8108:80" # phpMyAdmin에 접속하는 포트
+    depends_on:
+      - hearbe-mariadb
+  hearbe-redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    container_name: hearbe-redis
+    volumes:
+      - redis_data:/data
+    command: [ "redis-server", "--requirepass", "${REDIS_PASSWORD}" ]
+  hearbe-peer:
+    image: peerjs/peerjs-server
+    container_name: hearbe-peer
+    ports:
+      - "9000:9000"
+    restart: always
+    command: [ "--port", "9000", "--path", "/hearbe-peer" ]
+
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: hearbe-loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki-config.yml:/etc/loki/local-config.yaml
+      - loki_data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    user: root
+    restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: hearbe-promtail
+    volumes:
+      - ./promtail-config.yml:/etc/promtail/config.yml
+      - ${COMPOSE_HOST_LOG_PATH:-./logs}:/logs:ro
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+      - hearbe-backend
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: hearbe-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - loki
+    restart: unless-stopped
+
+volumes:
+  mariadb_data:
+  redis_data:
+  loki_data:
+  grafana_data:

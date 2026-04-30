@@ -1,0 +1,186 @@
+{
+  "success": true,
+  "buttons": [
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.headerSearchBtn",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.customer-feedback_likeBtn__57m6h",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.customer-feedback_dislikeBtn__FH5mZ",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.prevBtn",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.nextBtn",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.fw-h-[40px]",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.prevBtn",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "다음 상품 보기",
+      "selector": "button.nextBtn",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "찾고 싶은 상품을 검색해보세요!",
+      "selector": "input[name=\"q\"]",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "",
+      "selector": "input[type=\"text\"]:nth-of-type(4)",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "",
+      "selector": "input[type=\"text\"]:nth-of-type(5)",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "회원가입",
+      "selector": "a[title=\"회원가입\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "로그인",
+      "selector": "a[title=\"로그인\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "즐겨찾기",
+      "selector": "#wa-bookmark",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "전체",
+      "selector": "#sbSelector_59131311",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "마이쿠팡",
+      "selector": "#wa-mycoupang-link",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "0\n장바구니",
+      "selector": "#wa-cart-link",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "베베숲물티슈",
+      "selector": "a[title=\"베베숲물티슈\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "물티슈",
+      "selector": "a[title=\"물티슈\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "물티슈100매20팩",
+      "selector": "a[title=\"물티슈100매20팩\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "아기물티슈",
+      "selector": "a[title=\"아기물티슈\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "물티슈100매",
+      "selector": "a[title=\"물티슈100매\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "물티슈20팩",
+      "selector": "a[title=\"물티슈20팩\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "물티슈100매10팩",
+      "selector": "a[title=\"물티슈100매10팩\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "스마트에코",
+      "selector": "a[title=\"스마트에코\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "베베숲",
+      "selector": "a[title=\"베베숲\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "물티슈20",
+      "selector": "a[title=\"물티슈20\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "다음",
+      "selector": "a[title=\"다음\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "앙블랑 유아용 네오 그리너리 물티슈 캡형, 50g, 100매, 20개\n22,600원\n(10",
+      "selector": "a[title=\"앙블랑 유아용 네오 그리너리 물티슈 캡형, 50g, 100매, 20개\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "Bebeen 오리지널 플러스 영유아물티슈 캡형, 55g, 100매, 10개\n13,990원\n",
+      "selector": "a[title=\"Bebeen 오리지널 플러스 영유아물티슈 캡형, 55g, 100매, 10개\"]",
+      "visible": true
+    }
+  ],
+  "count": 30
+}

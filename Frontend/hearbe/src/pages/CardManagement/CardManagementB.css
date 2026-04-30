@@ -1,0 +1,518 @@
+.cardmgmt-container {
+    min-height: 100vh;
+    background-color: #141C29;
+    padding: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cardmgmt-logo-left {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    width: 320px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Back Button Override */
+.cardmgmt-container .global-back-button.arrow-only {
+    left: clamp(20px, 5vw, 40px);
+    top: clamp(20px, 5vw, 40px);
+}
+
+.cardmgmt-container .global-back-button.arrow-only .back-arrow-svg {
+    width: clamp(40px, 10vw, 80px);
+    height: clamp(40px, 10vw, 80px);
+}
+
+.cardmgmt-container .cardmgmt-content {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding: 20px 40px 60px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+/* Sidebar Navigation - C형 스타일 카드화 */
+.cardmgmt-sidebar {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-menu-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-item {
+    font-size: 32px;
+    font-weight: 950;
+    color: #FFF064;
+    padding: 20px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Pretendard', sans-serif;
+    text-align: left;
+    border: none;
+    background: transparent;
+    line-height: 1.3;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(255, 240, 100, 0.1);
+}
+
+.sidebar-item.active {
+    background-color: #FFF064;
+    color: #141C29;
+}
+
+/* Main Content - 카드 형태로 묶음 */
+.cardmgmt-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 48px;
+    font-weight: 950;
+    color: #FFF064;
+    margin-bottom: 30px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Current Card Display */
+.current-card-display {
+    background-color: #141C29;
+    padding: clamp(20px, 4vw, 40px);
+    border: clamp(3px, 0.4vw, 6px) solid #FFF064;
+    border-radius: clamp(12px, 2vw, 16px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 3vw, 24px);
+    margin-bottom: clamp(30px, 5vw, 50px);
+    width: 100%;
+    max-width: 800px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.card-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 12px);
+}
+
+.card-info-row-flex {
+    display: flex;
+    gap: clamp(20px, 4vw, 40px);
+    align-items: flex-end;
+}
+
+.card-info-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 12px);
+}
+
+.card-info-col .card-value {
+    margin-top: auto;
+}
+
+.card-label {
+    font-size: clamp(18px, 3.5vw, 26px);
+    font-weight: bold;
+    color: #FFF064;
+    opacity: 0.8;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.card-value {
+    font-size: clamp(22px, 4.2vw, 34px);
+    font-weight: 900;
+    color: #FFF064;
+    padding-left: clamp(8px, 1.5vw, 12px);
+    border-bottom: clamp(1px, 0.2vw, 2px) solid #FFF064;
+    padding-bottom: clamp(8px, 1.5vw, 12px);
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Change Button */
+.change-card-btn {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    padding: clamp(16px, 3vw, 24px);
+    background-color: #FFF064;
+    color: #1E2A3A;
+    border: none;
+    border-radius: clamp(8px, 2vw, 12px);
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    transition: opacity 0.2s;
+}
+
+.change-card-btn:hover {
+    opacity: 0.9;
+}
+
+/* Modal Overlay */
+.card-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #232A39;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(20px, 4vw, 40px);
+}
+
+.card-modal-box {
+    width: clamp(400px, 90vw, 800px);
+    max-height: 92vh;
+    overflow-y: auto;
+    background-color: #141C29;
+    border: clamp(3px, 0.6vw, 6px) solid #FFF064;
+    border-radius: clamp(16px, 3vw, 24px);
+    padding: clamp(16px, 3vw, 28px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 2vw, 16px);
+}
+
+.card-modal-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.card-modal-box::-webkit-scrollbar-thumb {
+    background-color: #FFF064;
+    border-radius: 999px;
+}
+
+.card-modal-box::-webkit-scrollbar-track {
+    background-color: rgba(255, 240, 100, 0.15);
+}
+
+.card-modal-close {
+    position: absolute;
+    top: clamp(15px, 3vw, 25px);
+    right: clamp(15px, 3vw, 25px);
+    font-size: clamp(32px, 8vw, 48px);
+    font-weight: 900;
+    color: #FFF064;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+}
+
+.card-modal-title {
+    font-size: clamp(46px, 10vw, 70px);
+    font-weight: 900;
+    color: #FFF064;
+    text-align: center;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.card-modal-desc {
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: bold;
+    color: #FFF064;
+    text-align: center;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Camera Area */
+.card-camera-area {
+    width: 100%;
+    max-width: 600px;
+    height: clamp(170px, 24vh, 280px);
+    border: clamp(3px, 0.6vw, 6px) solid #FFF064;
+    border-radius: clamp(12px, 2vw, 16px);
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-video-stream {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-camera-text {
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: bold;
+    color: #FFF064;
+    margin-bottom: clamp(10px, 2vw, 20px);
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.card-camera-icon {
+    width: clamp(60px, 15vw, 100px);
+    height: auto;
+}
+
+/* Shutter Button */
+.card-shutter-button {
+    width: clamp(60px, 15vw, 90px);
+    height: clamp(60px, 15vw, 90px);
+    border-radius: 50%;
+    border: clamp(3px, 0.6vw, 6px) solid #FFF064;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: clamp(20px, 4vw, 30px);
+}
+
+.card-shutter-inner {
+    width: clamp(45px, 12vw, 70px);
+    height: clamp(45px, 12vw, 70px);
+    border-radius: 50%;
+    background-color: #FFF064;
+    transition: transform 0.1s;
+}
+
+.card-shutter-button:active .card-shutter-inner {
+    transform: scale(0.9);
+}
+
+/* Form Content */
+.card-form-content {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 2vw, 14px);
+}
+
+.card-form-header-area {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 16px);
+    justify-content: center;
+    font-size: clamp(24px, 5.5vw, 38px);
+    font-weight: 900;
+    color: #FFF064;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.small-card-icon {
+    width: clamp(30px, 6vw, 50px);
+    height: auto;
+}
+
+.form-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 12px);
+}
+
+.form-field-group label {
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: bold;
+    color: #FFF064;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.card-modal-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(12px, 2.5vw, 18px);
+    border: clamp(2px, 0.4vw, 4px) solid #FFF064;
+    border-radius: clamp(8px, 2vw, 12px);
+    background-color: #232A39;
+    color: #FFF064;
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: bold;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    outline: none;
+}
+
+.form-row-group {
+    width: 100%;
+    display: flex;
+    gap: clamp(16px, 3vw, 24px);
+    align-items: stretch;
+}
+
+.form-field-group.half {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-button-group {
+    display: flex;
+    gap: clamp(16px, 3vw, 24px);
+    margin-top: clamp(4px, 1vw, 10px);
+}
+
+.card-retake-btn,
+.card-register-btn {
+    flex: 1;
+    padding: clamp(10px, 2.5vw, 16px);
+    border-radius: clamp(8px, 2vw, 12px);
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    border: none;
+    transition: opacity 0.2s;
+    box-shadow: none;
+    transform: none;
+}
+
+.card-retake-btn {
+    background-color: transparent;
+    border: clamp(2px, 0.4vw, 4px) solid #FFF064;
+    color: #FFF064;
+    box-shadow: none;
+}
+
+.card-register-btn {
+    background-color: #FFF064;
+    color: #1E2A3A;
+}
+
+.card-retake-btn:hover,
+.card-register-btn:hover {
+    opacity: 0.95;
+    box-shadow: 0 0 16px rgba(255, 240, 100, 0.35);
+}
+
+.card-retake-btn:active,
+.card-register-btn:active {
+    transform: none;
+    box-shadow: 0 0 10px rgba(255, 240, 100, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 1024px),
+(max-height: 900px) {
+    .cardmgmt-container .cardmgmt-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .cardmgmt-main {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardmgmt-container .cardmgmt-content {
+        flex-direction: column;
+
+        .cardmgmt-container .cardmgmt-content {
+            min-width: 0;
+        }
+    }
+
+    .cardmgmt-sidebar {
+        flex: none;
+    }
+
+    .cardmgmt-container .cardmgmt-content {
+        min-width: 0;
+    }
+}
+
+/* MyPage Top Bar */
+.mypage-topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 40px 0;
+    margin-bottom: 30px;
+}
+
+.mypage-topbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    color: #FFF064;
+    margin: 0;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.mypage-topbar-actions {
+    display: flex;
+    gap: 30px;
+}
+
+.topbar-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    color: #FFF064;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 21px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.topbar-action:hover {
+    background-color: rgba(255, 240, 100, 0.12);
+}

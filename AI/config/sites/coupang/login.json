@@ -1,0 +1,24 @@
+{
+  "page_type": "login",
+  "url_pattern": "login\\.coupang\\.com/login",
+  "description": "쿠팡 로그인 페이지",
+  "selectors": {
+    "tab_email_login": "a.password[data-tab=\"password-login\"]",
+    "tab_phone_login": "a.pc-otp-login-v4[data-tab=\"pc-otp-login-v4\"]",
+    "tab_qr_login": "a.qrcode[data-tab=\"qr-login\"]",
+    "email_input": "#login-email-input",
+    "phone_input": "input._phoneInput, input[name*='phone' i], input[id*='phone' i], input[placeholder*='휴대폰']",
+    "otp_input": "#smsCode, input#smsCode, input.verify-number, input[autocomplete='one-time-code'][type='number'], input[autocomplete='one-time-code']:not(._phoneInput):not([placeholder*='휴대폰']), input[name*='otp' i]:not(._phoneInput), input[id*='otp' i]:not(._phoneInput), input[name*='code' i]:not(._phoneInput), input[id*='code' i]:not(._phoneInput), input[placeholder*='인증']",
+    "password_input": "#login-password-input",
+    "login_button": "button.login__button",
+    "phone_submit_button": "button._phoneSubmitButton",
+    "otp_submit_button": "#loginWithSmsCode, button#loginWithSmsCode, button[data-phase-visible='VERIFY_CODE']",
+    "sms_login_keep_state": "#sms-login-keep-state",
+    "member_util": "button.member__util-trigger",
+    "pincode_method_sms": "input.pincode-select__pincode-verification-type-sms",
+    "pincode_method_email": "input.pincode-select__pincode-verification-type-email",
+    "pincode_method_submit": "button.pincode-content__button.pincode-select__button",
+    "pincode_input": "input.pincode-input__pincode-input-box__pincode",
+    "pincode_submit": "button.pincode-content__button.pincode-input__button"
+  }
+}

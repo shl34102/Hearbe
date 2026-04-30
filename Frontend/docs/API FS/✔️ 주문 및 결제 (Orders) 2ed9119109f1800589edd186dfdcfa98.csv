@@ -1,0 +1,3 @@
+﻿기능,HTTP 메서드,API Path,Request,Response
+주문 생성,POST,/orders,"RequestOrders (https://www.notion.so/RequestOrders-2ed9119109f180408015d2608be6e0ab?pvs=21) ","ResponseOrders (https://www.notion.so/ResponseOrders-2ed9119109f18048bc00f233bf9c7bfb?pvs=21) "
+내 주문 내역,GET,/orders/me,,"ResponseMe (https://www.notion.so/ResponseMe-2ed9119109f180e99be8dec9a77ced4e?pvs=21) "

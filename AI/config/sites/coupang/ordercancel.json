@@ -1,0 +1,19 @@
+{
+  "page_type": "ordercancel",
+  "url_pattern": "mc\\.coupang\\.com/ssr/desktop/cancel-flow",
+  "description": "쿠팡 주문 취소 플로우 페이지",
+  "selectors": {
+    "cancel_reason_heading": "text=취소 사유를 선택해주세요",
+    "cancel_next": "div.sc-phd79q-0.sc-no1o1z-0.kevHRZ button.sc-1k9quwu-0.bRJnss, button:has-text('다음 단계'):not([disabled]):not([aria-disabled='true'])",
+    "cancel_prev": "button.sc-14kbqk0-0.hArKmn, button:has-text('이전 단계')",
+    "cancel_submit": "button.sc-1k9quwu-0.fNOflY.sc-h1cnfc-0.haHncs, button:has-text('신청하기'):not([disabled]):not([aria-disabled='true'])",
+    "refund_section": "text=환불안내",
+    "cancel_modal": "text=취소 신청하시겠습니까?",
+    "cancel_modal_confirm": "button.sc-1k9quwu-0.fNOflY.sc-1mqf833-5.gNWRwL, button:has-text('확인')",
+    "cancel_modal_cancel": "button.sc-1k9quwu-0.frfKlj.sc-1mqf833-5.gNWRwL, button:has-text('취소')",
+    "cancel_back_to_cart": "div.sc-18sjv1d-0.hLOpPd, span.sc-18sjv1d-1.lgOlJa",
+    "cancel_complete_title": "text=취소 신청이 완료되었습니다",
+    "cancel_complete_check": "button:has-text('신청내역 확인하기')",
+    "cancel_complete_continue": "button:has-text('쇼핑 계속하기')"
+  }
+}

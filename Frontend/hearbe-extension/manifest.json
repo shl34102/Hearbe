@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "HearBe Share",
+  "version": "0.1.0",
+  "description": "Adds a share button overlay for HearBe screen sharing.",
+  "permissions": ["tabs"],
+  "host_permissions": [
+    "https://www.coupang.com/*",
+    "https://*.coupang.com/*",
+    "https://shopping.naver.com/*",
+    "https://m.shopping.naver.com/*",
+    "https://*.naver.com/*",
+    "https://m.11st.co.kr/*",
+    "https://*.11st.co.kr/*",
+    "https://m.ssg.com/*",
+    "https://*.ssg.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.coupang.com/*",
+        "https://*.coupang.com/*",
+        "https://shopping.naver.com/*",
+        "https://m.shopping.naver.com/*",
+        "https://*.naver.com/*",
+        "https://m.11st.co.kr/*",
+        "https://*.11st.co.kr/*",
+        "https://m.ssg.com/*",
+        "https://*.ssg.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_title": "HearBe Share"
+  }
+}

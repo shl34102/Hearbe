@@ -1,0 +1,12 @@
+# Coupang: command-queue smoke test
+#
+# Purpose
+# - Quick verification that command queue finishes normally (no 120s timeout)
+# - Does not attempt payment
+#
+# delay_ms=15000
+# extra_runtime_sec=30
+
+쿠팡으로 이동
+장바구니로 이동
+

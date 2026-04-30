@@ -1,0 +1,26 @@
+{
+  "page_type": "search",
+  "url_pattern": "/np/search\\?",
+  "description": "쿠팡 검색 결과 페이지",
+  "selectors": {
+    "search_input": "input[name=\"q\"]",
+    "search_button": "button.headerSearchBtn",
+    "product_list": "li.search-product, li[class*=\"ProductUnit_productUnit__\"]",
+    "product_item": "li.search-product a[href*=\"/vp/products/\"], li[class*=\"ProductUnit_productUnit__\"] a[href*=\"/vp/products/\"]",
+    "product_title": "div[class*=\"ProductUnit_productNameV2__\"], .name",
+    "product_price": ".price-value, .PriceArea_priceArea__NntJz [class*=\"fw-text-[20px]\"]",
+    "product_original_price": "del",
+    "product_discount": "[class*=\"fw-bg-[#CB1400]\"]",
+    "product_rating": ".ProductRating_productRating__jjf7W [aria-label]",
+    "product_reviews": ".ProductRating_productRating__jjf7W span[class*=\"fw-text-[#212B36]\"]",
+    "product_free_shipping": "[class*=\"fw-bg-[#CCEDFD]\"]",
+    "product_free_return": "[class*=\"fw-bg-bluegray-100\"]",
+    "product_delivery": "span[style*=\"color:#008C00\"]",
+    "sort_wrapper": "div[class*=\"srp_sortWrapper__\"]",
+    "next_page_btn": "button.nextBtn",
+    "prev_page_btn": "button.prevBtn",
+    "next_page_link": "a[title=\"다음\"]",
+    "feedback_like": "button.customer-feedback_likeBtn__57m6h",
+    "feedback_dislike": "button.customer-feedback_dislikeBtn__FH5mZ"
+  }
+}

@@ -1,0 +1,435 @@
+.select-mall-page-c {
+    min-height: 100vh;
+    background-color: #fcfcfc;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.mall-main-c {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 20px;
+    text-align: center;
+    flex: 1;
+    /* 콘텐츠가 공간을 차지하게 하여 푸터를 밑으로 밈 */
+}
+
+/* Header */
+.mall-header-c {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: none;
+    transition: all 0.3s ease;
+}
+
+.mall-header-c.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 15px 60px;
+    /* Slight shrink effect */
+}
+
+.header-left-c {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.title-area-c {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-icon-box-c {
+    width: 60px;
+    height: 60px;
+    background: #f5f3ff;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8B5CF6;
+}
+
+.title-text-c h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.subtitle-c {
+    font-size: 16px;
+    color: #94a3b8;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.header-title-group-c {
+    display: none;
+}
+
+.header-title-main-c {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+.header-title-sub-c {
+    font-size: 13px;
+    /* 11px -> 13px */
+    color: #aaa;
+    letter-spacing: 0.5px;
+    margin-top: -2px;
+}
+
+.header-right-c {
+    display: flex;
+    gap: 40px;
+    /* 버튼 사이 간격 확대 */
+}
+
+.nav-item-c {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.nav-item-c:hover {
+    transform: translateY(-2px);
+}
+
+.nav-item-c.active .nav-icon-c {
+    background: #7C3AED;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+.nav-icon-c {
+    width: 60px;
+    /* 48px -> 60px */
+    height: 60px;
+    /* 48px -> 60px */
+    background: #8B5CF6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.2);
+    transition: all 0.2s ease;
+}
+
+.nav-item-c span {
+    font-size: 14px;
+    /* 11px -> 14px */
+    font-weight: 800;
+    color: #64748b;
+}
+
+.nav-item-c.active span {
+    color: #7C3AED;
+    font-weight: 800;
+}
+
+
+.mall-hero-c {
+    margin: 0 0 60px;
+}
+
+.mall-main-title-c {
+    font-size: 62px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 28px;
+    letter-spacing: -2px;
+}
+
+.voice-guide-badge-c {
+    display: inline-block;
+    padding: 18px 36px;
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    border-radius: 35px;
+    color: #8B5CF6;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.badge-text-c {
+    font-weight: 800;
+}
+
+/* Grid */
+.mall-grid-container-c {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px;
+    justify-items: center;
+}
+
+/* New Card Design */
+.back-button-circle-c {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8B5CF6;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-button-circle-c:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.25);
+    background: #fdfbff;
+}
+
+.header-left-dummy-c {
+    width: 200px;
+    /* Placeholder to keep right nav pushed */
+}
+
+.mall-card-new-c {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    background: white;
+    border-radius: 40px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.mall-card-new-c:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.mall-card-disabled {
+    filter: none;
+    /* Grayscale 대신 반투명으로 처리 */
+    opacity: 0.4;
+    cursor: not-allowed !important;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+}
+
+.mall-card-disabled .card-num-badge-c {
+    background-color: #cbd5e1 !important;
+}
+
+.mall-card-disabled:hover {
+    transform: none !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04) !important;
+}
+
+.mall-card-disabled .card-watermark-logo-c {
+    filter: grayscale(1);
+    opacity: 0.07;
+    /* 로고를 아주 희미하게 실루엣만 남김 */
+}
+
+.mall-card-disabled .open-store-text-c {
+    color: #94a3b8 !important;
+    font-size: 12px;
+}
+
+.mall-card-new-c:not(.mall-card-disabled) {
+    border: 2px solid transparent;
+}
+
+.mall-card-new-c:not(.mall-card-disabled):hover {
+    border-color: #8B5CF6;
+}
+
+.card-top-row-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.card-title-row-c {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-num-badge-c {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.card-link-icon-c {
+    color: #ddd;
+}
+
+.card-watermark-c {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 180px;
+    font-weight: 900;
+    color: #f8f8f8;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.card-watermark-logo-c {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.card-content-c {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    padding-top: 15px;
+}
+
+.mall-card-name-c {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.mall-card-desc-c {
+    font-size: 15px;
+    color: #999;
+    line-height: 1.5;
+}
+
+.card-footer-c {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+.open-store-text-c {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ddd;
+    letter-spacing: 1px;
+}
+
+.open-store-arrow-c {
+    color: #ddd;
+    font-size: 16px;
+}
+
+.mall-card-new-c:hover .card-link-icon-c,
+.mall-card-new-c:hover .open-store-text-c,
+.mall-card-new-c:hover .open-store-arrow-c {
+    color: #8B5CF6;
+}
+
+@media (max-width: 1024px) {
+    .mall-grid-container-c {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mall-header-c {
+        padding: 15px 20px;
+    }
+
+    .title-text-c h1 {
+        font-size: 24px;
+    }
+
+    .subtitle-c {
+        font-size: 14px;
+    }
+
+    .header-right-c {
+        gap: 15px;
+    }
+
+    .nav-icon-c {
+        width: 48px;
+        height: 48px;
+    }
+
+    .back-button-circle-c {
+        top: 20px;
+        left: 20px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .mall-main-title-c {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .mall-grid-container-c {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .mall-card-new-c {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        min-height: 400px;
+    }
+
+    .header-left-dummy-c {
+        display: none;
+    }
+}

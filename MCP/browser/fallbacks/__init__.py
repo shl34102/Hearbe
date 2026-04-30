@@ -1,0 +1,3 @@
+﻿"""
+Fallback extraction helpers.
+"""

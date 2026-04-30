@@ -1,0 +1,540 @@
+.signup-c-container {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    font-family: 'Pretendard', sans-serif;
+    color: #1e293b;
+    position: relative;
+    overflow: hidden;
+    /* 전체 페이지 스크롤 방지 */
+    display: flex;
+    flex-direction: column;
+}
+
+.back-button-circle-c {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.back-button-circle-c:hover {
+    transform: scale(1.1);
+    color: #8b5cf6;
+}
+
+.signup-c-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+    height: 100%;
+}
+
+.signup-card-c {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px 50px;
+    border-radius: 32px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    z-index: 1;
+    max-height: 95vh;
+    overflow-y: auto;
+    /* 내용 넘침 시 내부 스크롤 */
+    scrollbar-width: none;
+    /* Firefox 스크롤바 숨김 */
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-card-c::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari 스크롤바 숨김 */
+}
+
+.signup-logo-section-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+/* Logo centering */
+.signup-logo-c {
+    height: 70px;
+    /* 로고 크기 축소 (LoginC와 동일) */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.password-requirements-c {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-align: left;
+    margin-top: 0.5rem;
+    padding-left: 0.25rem;
+}
+
+.signup-title-c {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.signup-form-c {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.signup-input-c {
+    width: 100%;
+    padding: 14px 20px;
+    /* 패딩 축소 */
+    border: 1.5px solid #f1f5f9;
+    border-radius: 16px;
+    font-size: 15px;
+    outline: none;
+    background-color: white;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.signup-input-c::placeholder {
+    color: #94a3b8;
+}
+
+.signup-input-c:focus {
+    border-color: #8b5cf6;
+}
+
+.input-section-c {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gray-bg-c {
+    background-color: #f8fafc;
+}
+
+.input-with-button-c {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-with-button-c .signup-input-c {
+    width: 100%;
+    padding-right: 6.5rem;
+}
+
+/* Button inside the input */
+.check-duplicate-btn-c {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
+    padding: 0.6rem 1rem;
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #4b5563;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    z-index: 2;
+}
+
+.check-duplicate-btn-c:hover {
+    background-color: #e5e7eb;
+}
+
+.check-duplicate-btn-c.checked {
+    background-color: transparent;
+    color: #059669;
+}
+
+.password-wrapper-c {
+    position: relative;
+}
+
+.pw-toggle-c {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pw-toggle-c svg {
+    width: 20px;
+    height: 20px;
+}
+
+.form-divider-c {
+    border: none;
+    border-top: 2px solid #f1f5f9;
+    /* 구분선 색상 연하게 */
+    margin: 4px 0;
+}
+
+/* 비밀번호 재확인 위의 실선 제거 */
+.input-c-group.confirm-pw-group {
+    padding-top: 0;
+    border-top: none;
+    margin-top: 0;
+}
+
+.terms-container-c {
+    background-color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-align: left;
+    margin-top: 0;
+}
+
+.terms-item-c {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.all-agree-c {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.terms-item-c input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #8b5cf6;
+    cursor: pointer;
+}
+
+.signup-submit-btn-c {
+    margin-top: 10px;
+    padding: 16px;
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.25);
+    transition: all 0.2s;
+}
+
+.signup-submit-btn-c:hover {
+    background-color: #7c3aed;
+    transform: translateY(-2px);
+}
+
+.signup-submit-btn-c.disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.modal-overlay-c {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content-c {
+    background: white;
+    padding: 3rem;
+    border-radius: 32px;
+    width: 90%;
+    max-width: 480px;
+    text-align: center;
+}
+
+.modal-icon-c {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.modal-title-c {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.modal-desc-c {
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.modal-btn-c {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+.premium-footer-text-c {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    color: #e2e8f0;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
+/* Password Condition Check Styles */
+.password-conditions-c {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.condition-item-c {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #94a3b8;
+    /* Default gray (before input) */
+    transition: all 0.2s ease;
+}
+
+.condition-item-c.satisfied {
+    color: #10b981;
+    /* Green when satisfied */
+    font-weight: 600;
+}
+
+.condition-item-c.unsatisfied {
+    color: #ef4444;
+    /* Red when input exists but not satisfied */
+}
+
+.input-error {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Terms Styles */
+.terms-list-c {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.terms-item-c {
+    justify-content: space-between;
+    /* Space out checkbox+label and View button */
+    padding: 2px 0;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terms-view-btn-c {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0 5px;
+}
+
+.terms-view-btn-c:hover {
+    color: #8b5cf6;
+}
+
+/* Ensure button is clickable */
+.terms-view-btn-c {
+    position: relative;
+    z-index: 10;
+}
+
+/* Term Modal Specifics */
+.term-modal-c {
+    padding: 2rem !important;
+    /* Override default padding */
+    text-align: left !important;
+    max-width: 480px !important;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+.term-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.term-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+}
+
+.close-btn-c {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.term-scroll-box {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f8fafc;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.term-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+    white-space: pre-wrap;
+    /* Preserve line breaks */
+}
+
+/* Text-based Password Feedback Styles */
+.password-conditions-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    padding-left: 0;
+    text-align: left;
+}
+
+.pw-condition-text {
+    margin: 0;
+    font-size: 12px;
+    /* Increased */
+    color: #94a3b8;
+    /* Default Gray */
+    transition: color 0.2s;
+    font-weight: 600;
+    /* Bold */
+    margin-left: 5px;
+    /* Consistent alignment */
+    margin-top: 4px;
+}
+
+.pw-condition-text.satisfied {
+    color: #10b981;
+    /* Green */
+    font-weight: 600;
+}
+
+.pw-condition-text.unsatisfied {
+    color: #ef4444;
+    /* Red */
+}
+
+.error-text-c {
+    display: block;
+    text-align: left;
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .signup-card-c {
+        padding: 30px 20px;
+        width: 95%;
+        /* Slightly wider on mobile for Signup */
+    }
+
+    .signup-logo-c {
+        height: 50px;
+    }
+}

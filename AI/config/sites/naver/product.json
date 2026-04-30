@@ -1,0 +1,9 @@
+{
+  "page_type": "product",
+  "url_pattern": "/catalog/",
+  "description": "네이버쇼핑 상품 상세 페이지",
+  "selectors": {
+    "add_to_cart": ".productByMall_btn_cart__1mIAl",
+    "buy_now": ".productByMall_btn_buy__1lMHT"
+  }
+}

@@ -1,0 +1,60 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: hearbe-backend
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: hearbe-backend
+          host: hearbe-backend
+          __path__: /logs/app.log
+    
+    pipeline_stages:
+      # ========================================
+      # JSON 파싱 (모든 필드 자동 추출)
+      # ========================================
+      - json:
+          expressions:
+            timestamp: timestamp
+            level: level
+            logger: logger
+            thread: thread
+            message: message
+            stack_trace: stack_trace
+            app: app
+      
+      # ========================================
+      # 타임스탬프 파싱 (ISO 8601 / RFC3339)
+      # ========================================
+      - timestamp:
+          source: timestamp
+          format: RFC3339
+      
+      # ========================================
+      # 레이블로 추출 (Grafana 필터링용)
+      # ========================================
+      - labels:
+          level:
+          logger:
+          thread:
+          app:
+      
+      # ========================================
+      # 출력 포맷 (Stack Trace 포함)
+      # ========================================
+      - template:
+          source: output
+          template: '{{ if .stack_trace }}{{ .message }}
+{{ .stack_trace }}{{ else }}{{ .message }}{{ end }}'
+      
+      - output:
+          source: output

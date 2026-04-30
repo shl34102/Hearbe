@@ -1,0 +1,186 @@
+{
+  "success": true,
+  "buttons": [
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.headerSearchBtn",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.twc-relative",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.twc-relative",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "쿠팡캐시 적립",
+      "selector": "button:nth-of-type(6)",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "수량빼기",
+      "selector": "button.twc-relative",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "수량더하기",
+      "selector": "button.twc-relative",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "장바구니 담기",
+      "selector": "button.prod-cart-btn",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "바로구매",
+      "selector": "button.prod-buy-btn",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "상품정보 더보기",
+      "selector": "button.data-[focus-visible=true]:twc-outline-2",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "자세히 보기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "상품리뷰 운영원칙",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "베스트순",
+      "selector": "button.twc-font-bold",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "최신순",
+      "selector": "button.twc-font-normal",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "도움이 돼요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "1명에게 도움이 됐어요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "도움이 돼요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "도움이 돼요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "도움이 돼요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "도움이 돼요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "도움이 돼요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "도움이 돼요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "신고하기",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "1명에게 도움이 됐어요",
+      "selector": "button.twc-inline-flex",
+      "visible": true
+    }
+  ],
+  "count": 30
+}

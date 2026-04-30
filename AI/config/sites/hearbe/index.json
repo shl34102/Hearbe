@@ -1,0 +1,20 @@
+{
+  "site_id": "hearbe",
+  "name": "Hearbe",
+  "domains": ["i14d108.p.ssafy.io"],
+  "urls": {
+    "intro": "https://i14d108.p.ssafy.io/intro",
+    "home": "https://i14d108.p.ssafy.io/main",
+    "login_a": "https://i14d108.p.ssafy.io/A/login",
+    "login_b": "https://i14d108.p.ssafy.io/B/login",
+    "login_c": "https://i14d108.p.ssafy.io/C/login",
+    "signup_b": "https://i14d108.p.ssafy.io/B/signup",
+    "signup_c": "https://i14d108.p.ssafy.io/C/signup",
+    "mall_a": "https://i14d108.p.ssafy.io/A/mall",
+    "mall_b": "https://i14d108.p.ssafy.io/B/mall",
+    "mall_c": "https://i14d108.p.ssafy.io/C/mall",
+    "member_info_a": "https://i14d108.p.ssafy.io/A/member-info",
+    "member_info_b": "https://i14d108.p.ssafy.io/B/member-info",
+    "member_info_c": "https://i14d108.p.ssafy.io/C/member-info"
+  }
+}

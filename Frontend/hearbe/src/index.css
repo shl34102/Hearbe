@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  height: 100%;
+  background-color: #f8f9fb;
+  color: #1f2937;
+  overflow: hidden;
+}
+
+/* ===== A형 페이지 전용 어두운 배경 ===== */
+body:has(.login-container),
+body:has(.signup-container),
+body:has(.mypage-container-a),
+body:has(.memberinfo-container),
+body:has(.orderhistory-container),
+body:has(.wishlist-container),
+body:has(.cart-container),
+body:has(.cardmgmt-container),
+body:has(.findid-container),
+body:has(.findpw-container),
+body:has(.store-browser-a),
+body:has(.store-container),
+body:has(.login-a-page-new),
+body:has(.signup-a-page-new),
+body:has(.findid-a-page-new),
+body:has(.findpw-a-page-new),
+body:has(.changepw-a-page-new),
+body:has(.select-mall-a-container) {
+  background-color: #141C29 !important;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* #root도 A형 배경을 따라가도록 설정 */
+body:has(.select-mall-a-container) #root,
+body:has(.login-a-page-new) #root,
+body:has(.signup-a-page-new) #root {
+  background-color: #141C29 !important;
+}
+
+/* ===== SweetAlert2 Custom Theme (HearBe Purple) ===== */
+div:where(.swal2-container) div:where(.swal2-popup) {
+  border-radius: 24px !important;
+  padding: 2.5rem 2rem !important;
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.15) !important;
+  border: 1px solid rgba(124, 58, 237, 0.08);
+  /* A형 어두운 배경에서도 구분되도록 */
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* A형(다크모드)일 때 팝업 배경 처리 (선택사항) */
+/* body가 어두운 색일 때 팝업도 어둡게 가려면 여기에 추가 스타일 작성 */
+
+div:where(.swal2-container) h2:where(.swal2-title) {
+  color: #4c1d95 !important;
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.8rem !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-html-container) {
+  color: #4b5563 !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  margin: 0.5rem 0 1.5rem 0 !important;
+}
+
+/* Confirm Button - Gradient Purple */
+div:where(.swal2-container) button:where(.swal2-confirm) {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%) !important;
+  border-radius: 14px !important;
+  padding: 14px 40px !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  outline: none !important;
+  border: none !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-confirm):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4) !important;
+  filter: brightness(1.1);
+}
+
+div:where(.swal2-container) button:where(.swal2-confirm):active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Cancel Button - Soft Gray */
+div:where(.swal2-container) button:where(.swal2-cancel) {
+  background: #f3f4f6 !important;
+  color: #6b7280 !important;
+  border-radius: 14px !important;
+  padding: 14px 30px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+  border: none !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-cancel):hover {
+  background: #e5e7eb !important;
+  color: #374151 !important;
+  transform: translateY(-1px);
+}
+
+/* Icons Styling */
+div:where(.swal2-icon) {
+  border-width: 3px !important;
+  margin-bottom: 1.5rem !important;
+}
+
+div:where(.swal2-icon).swal2-success {
+  border-color: #7c3aed !important;
+  color: #7c3aed !important;
+}
+
+div:where(.swal2-icon).swal2-success [class^='swal2-success-line'] {
+  background-color: #7c3aed !important;
+}
+
+div:where(.swal2-icon).swal2-success .swal2-success-ring {
+  border-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+div:where(.swal2-icon).swal2-warning {
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+}
+
+div:where(.swal2-icon).swal2-error {
+  border-color: #ef4444 !important;
+  color: #ef4444 !important;
+}
+
+[class^='swal2-x-mark-line'] {
+  background-color: #ef4444 !important;
+}
+
+/* ===== A-Type SweetAlert2 Theme (Navy & Yellow) ===== */
+/* body에 A형 관련 클래스들이 있을 때 팝업 스타일 변경 */
+body:has(.login-a-page-new) .swal2-popup,
+body:has(.signup-a-page-new) .swal2-popup,
+body:has(.findid-a-page-new) .swal2-popup,
+body:has(.findpw-a-page-new) .swal2-popup,
+body:has(.changepw-a-page-new) .swal2-popup,
+body:has(.mypage-container-a) .swal2-popup,
+body:has(.memberinfo-container) .swal2-popup,
+body:has(.orderhistory-container) .swal2-popup,
+body:has(.wishlist-container) .swal2-popup,
+body:has(.cart-container) .swal2-popup,
+body:has(.cardmgmt-container) .swal2-popup,
+body:has(.store-browser-a) .swal2-popup,
+body:has(.store-container) .swal2-popup,
+body:has(.select-mall-a-container) .swal2-popup {
+  background: #141C29 !important;
+  border: 4px solid #FFF064 !important;
+  color: #FFF064 !important;
+  border-radius: 40px !important;
+}
+
+body:has(.login-a-page-new) .swal2-title,
+body:has(.signup-a-page-new) .swal2-title,
+body:has(.findid-a-page-new) .swal2-title,
+body:has(.findpw-a-page-new) .swal2-title,
+body:has(.changepw-a-page-new) .swal2-title,
+body:has(.mypage-container-a) .swal2-title,
+body:has(.memberinfo-container) .swal2-title,
+body:has(.orderhistory-container) .swal2-title,
+body:has(.wishlist-container) .swal2-title,
+body:has(.cart-container) .swal2-title,
+body:has(.cardmgmt-container) .swal2-title,
+body:has(.store-browser-a) .swal2-title,
+body:has(.store-container) .swal2-title,
+body:has(.select-mall-a-container) .swal2-title {
+  color: #FFF064 !important;
+  font-weight: 950 !important;
+  font-size: 2.2rem !important;
+}
+
+body:has(.login-a-page-new) .swal2-html-container,
+body:has(.signup-a-page-new) .swal2-html-container,
+body:has(.findid-a-page-new) .swal2-html-container,
+body:has(.findpw-a-page-new) .swal2-html-container,
+body:has(.changepw-a-page-new) .swal2-html-container,
+body:has(.mypage-container-a) .swal2-html-container,
+body:has(.memberinfo-container) .swal2-html-container,
+body:has(.orderhistory-container) .swal2-html-container,
+body:has(.wishlist-container) .swal2-html-container,
+body:has(.cart-container) .swal2-html-container,
+body:has(.cardmgmt-container) .swal2-html-container,
+body:has(.store-browser-a) .swal2-html-container,
+body:has(.store-container) .swal2-html-container,
+body:has(.select-mall-a-container) .swal2-html-container {
+  color: #FFF064 !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  line-height: 1.5 !important;
+}
+
+body:has(.login-a-page-new) .swal2-confirm,
+body:has(.signup-a-page-new) .swal2-confirm,
+body:has(.findid-a-page-new) .swal2-confirm,
+body:has(.findpw-a-page-new) .swal2-confirm,
+body:has(.changepw-a-page-new) .swal2-confirm,
+body:has(.mypage-container-a) .swal2-confirm,
+body:has(.memberinfo-container) .swal2-confirm,
+body:has(.orderhistory-container) .swal2-confirm,
+body:has(.wishlist-container) .swal2-confirm,
+body:has(.cart-container) .swal2-confirm,
+body:has(.cardmgmt-container) .swal2-confirm,
+body:has(.store-browser-a) .swal2-confirm,
+body:has(.store-container) .swal2-confirm,
+body:has(.select-mall-a-container) .swal2-confirm {
+  background: #FFF064 !important;
+  color: #141C29 !important;
+  font-weight: 950 !important;
+  border-radius: 20px !important;
+  font-size: 1.45rem !important;
+  padding: 16px 54px !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 240, 100, 0.2) !important;
+}
+
+body:has(.login-a-page-new) .swal2-icon,
+body:has(.signup-a-page-new) .swal2-icon,
+body:has(.findid-a-page-new) .swal2-icon,
+body:has(.findpw-a-page-new) .swal2-icon,
+body:has(.changepw-a-page-new) .swal2-icon,
+body:has(.mypage-container-a) .swal2-icon,
+body:has(.memberinfo-container) .swal2-icon,
+body:has(.orderhistory-container) .swal2-icon,
+body:has(.wishlist-container) .swal2-icon,
+body:has(.cart-container) .swal2-icon,
+body:has(.cardmgmt-container) .swal2-icon,
+body:has(.store-browser-a) .swal2-icon,
+body:has(.store-container) .swal2-icon,
+body:has(.select-mall-a-container) .swal2-icon {
+  border-color: #FFF064 !important;
+  color: #FFF064 !important;
+}
+
+body:has(.login-a-page-new) .swal2-success-line,
+body:has(.signup-a-page-new) .swal2-success-line,
+body:has(.findid-a-page-new) .swal2-success-line,
+body:has(.findpw-a-page-new) .swal2-success-line,
+body:has(.changepw-a-page-new) .swal2-success-line,
+body:has(.mypage-container-a) .swal2-success-line,
+body:has(.memberinfo-container) .swal2-success-line,
+body:has(.orderhistory-container) .swal2-success-line,
+body:has(.wishlist-container) .swal2-success-line,
+body:has(.cart-container) .swal2-success-line,
+body:has(.cardmgmt-container) .swal2-success-line,
+body:has(.store-browser-a) .swal2-success-line,
+body:has(.store-container) .swal2-success-line,
+body:has(.select-mall-a-container) .swal2-success-line {
+  background-color: #FFF064 !important;
+}
+
+body:has(.login-a-page-new) .swal2-success-ring,
+body:has(.signup-a-page-new) .swal2-success-ring,
+body:has(.findid-a-page-new) .swal2-success-ring,
+body:has(.findpw-a-page-new) .swal2-success-ring,
+body:has(.changepw-a-page-new) .swal2-success-ring,
+body:has(.mypage-container-a) .swal2-success-ring,
+body:has(.memberinfo-container) .swal2-success-ring,
+body:has(.orderhistory-container) .swal2-success-ring,
+body:has(.wishlist-container) .swal2-success-ring,
+body:has(.cart-container) .swal2-success-ring,
+body:has(.cardmgmt-container) .swal2-success-ring,
+body:has(.store-browser-a) .swal2-success-ring,
+body:has(.store-container) .swal2-success-ring,
+body:has(.select-mall-a-container) .swal2-success-ring {
+  border-color: rgba(255, 240, 100, 0.3) !important;
+}
+
+/* ===== A형 푸터 스타일 보정 (배경색 일치 및 선 제거) ===== */
+.landing-footer-a,
+.select-mall-a-footer,
+footer.landing-footer-a,
+footer.select-mall-a-footer {
+  background-color: #141C29 !important;
+  border: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}

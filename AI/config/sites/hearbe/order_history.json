@@ -1,0 +1,7 @@
+{
+  "page_type": "order_history",
+  "url_pattern": "/[ABC]/order-history",
+  "description": "Hearbe order history page",
+  "selectors": {}
+}
+

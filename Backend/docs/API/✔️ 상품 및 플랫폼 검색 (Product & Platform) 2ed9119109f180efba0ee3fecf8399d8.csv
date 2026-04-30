@@ -1,0 +1,5 @@
+﻿기능,HTTP 메서드,API Path,Request,Response
+상품 상세 조회,GET,/products/{product_id},,"ResponseProduct (https://www.notion.so/ResponseProduct-2ed9119109f1808d9b59c0215a68d3b8?pvs=21) "
+플랫폼별 상품 동기화,POST,/products/sync,"외부 쇼핑몰 상품 정보를 last_synced_at 기반 갱신
+RequestSyncProducts (https://www.notion.so/RequestSyncProducts-2ed9119109f180baad5de8b0ed49bb93?pvs=21) ","ResponseSyncProducts (https://www.notion.so/ResponseSyncProducts-2ed9119109f180468958fe0f9bd60615?pvs=21) "
+플랫폼 목록 조회,GET,/platforms,"지원 가능한 쇼핑몰(쿠팡, 네이버 등) 목록","ResponsePlatforms (https://www.notion.so/ResponsePlatforms-2ed9119109f1805dbfc8f354d1ebd687?pvs=21) "

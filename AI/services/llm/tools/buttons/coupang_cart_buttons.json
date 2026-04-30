@@ -1,0 +1,186 @@
+{
+  "success": true,
+  "buttons": [
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.data-[focus-visible=true]:twc-outline-2",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.data-[focus-visible=true]:twc-outline-2",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "",
+      "selector": "input[type=\"text\"]:nth-of-type(1)",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "총 1개 상품 구매하기",
+      "selector": "#btnPay",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "붕어빵 올인원 엘리트 A 플러스 유아 물티슈 캡형, 20개, 72매, 75g\n32,890원",
+      "selector": "a[title=\"붕어빵 올인원 엘리트 A 플러스 유아 물티슈 캡형, 20개, 72매, 75g\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "미엘 더 클래식 시그니처 물티슈 캡형, 55g, 100개입, 10개\n12,890원\n(10매",
+      "selector": "a[title=\"미엘 더 클래식 시그니처 물티슈 캡형, 55g, 100개입, 10개\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "깨끗한지 순한 아기물티슈 도톰한 저자극 엠보싱 캡형, 10개, 70매, 75g\n17,370",
+      "selector": "a[title=\"깨끗한지 순한 아기물티슈 도톰한 저자극 엠보싱 캡형, 10개, 70매, 75g\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "앙블랑 유아용 네오 그리너리 물티슈 캡형, 50g, 100매, 10개\n11,300원\n(10",
+      "selector": "a[title=\"앙블랑 유아용 네오 그리너리 물티슈 캡형, 50g, 100매, 10개\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "Bebeen 120 영유아물티슈 캡형, 50g, 120매, 10개\n51%\n12,600원\n(",
+      "selector": "a[title=\"Bebeen 120 영유아물티슈 캡형, 50g, 120매, 10개\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "베베숲 시그니처 그린 아기물티슈 휴대캡형, 70g, 20매, 12개\n20%\n9,490원\n(",
+      "selector": "a[title=\"베베숲 시그니처 그린 아기물티슈 휴대캡형, 70g, 20매, 12개\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "브라운라이프 베이지 도톰한 대용량 엠보싱 저자극 아기물티슈 캡형, 50g, 100매, 10",
+      "selector": "a[title=\"브라운라이프 베이지 도톰한 대용량 엠보싱 저자극 아기물티슈 캡형, 50g, 100매, 10개\"]",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "Bebeen 오리지널 플러스 영유아물티슈 캡형, 55g, 100매, 10개\n43%\n13,9",
+      "selector": "a[title=\"Bebeen 오리지널 플러스 영유아물티슈 캡형, 55g, 100매, 10개\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "전체 선택",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "link-button",
+      "text": "총 1개 상품 구매하기",
+      "selector": "#btnPay",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "12,900\n원",
+      "selector": "[class*=\"cart\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "같이 보면 좋은 상품\n광고\n1/5\n붕어빵 올인원 엘리트 A 플러스 유아 물티슈 캡형, 20",
+      "selector": "[class*=\"cart\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "Coupang",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "장바구니(1)\n01\n옵션선택\n02\n장바구니\n03\n주문/결제\n04\n주문완료\n로켓배송 상품\n무",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "장바구니(1)\n01\n옵션선택\n02\n장바구니\n03\n주문/결제\n04\n주문완료",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "로켓배송 상품\n무료배송 · 19,800원 이상 주문 가능\n베베숲 오리진 유아물티슈 캡형\n옵",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "로켓배송 상품\n무료배송 · 19,800원 이상 주문 가능",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "베베숲 오리진 유아물티슈 캡형\n옵션: 50g, 100매, 10개\n삭제\n한달구매 5만+\n내일",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "선택삭제",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "품절/판매종료상품 전체삭제",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "주문 예상 금액\n총 상품 가격\n12,900\n원\n총 배송비\n+\n0\n원\n12,900\n원\n총 1",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "로켓배송 상품 \n6,900원 이상 추가 시 구매가능\n19,800원\n로켓상품 추가하기\n추가금",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "로켓상품 추가하기",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "추가금액 없이 구매하기",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    },
+    {
+      "type": "shopping-action",
+      "text": "위 상품을 구매한 고객이 함께 구매한 상품\n1/3\nBebeen 120 영유아물티슈 캡형, ",
+      "selector": "[class*=\"order\"]",
+      "visible": true
+    }
+  ],
+  "count": 30
+}

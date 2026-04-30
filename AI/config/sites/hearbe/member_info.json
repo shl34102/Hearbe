@@ -1,0 +1,13 @@
+{
+  "page_type": "member_info",
+  "url_pattern": "/[ABC]/member-info",
+  "description": "Hearbe member info page (token refresh/source of truth)",
+  "selectors": {
+    "go_to_mall": "button:has-text('쇼핑몰'), button:has-text('홈')",
+    "logout": "button:has-text('로그아웃')",
+    "side_member_info": "button:has-text('회원 정보')",
+    "side_order_history": "button:has-text('주문 내역')",
+    "side_wishlist": "button:has-text('찜한 상품')",
+    "side_cart": "button:has-text('장바구니')"
+  }
+}

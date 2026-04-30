@@ -1,0 +1,110 @@
+{
+    "flow_id": "coupang_signup",
+    "flow_type": "signup",
+    "site": "coupang",
+    "total_steps": 7,
+    "steps": [
+        {
+            "step_id": 1,
+            "name": "navigate_to_signup",
+            "prompt": "쿠팡 회원가입 페이지로 이동합니다.",
+            "action": {
+                "tool_name": "navigate_to_url",
+                "arguments": {
+                    "url": "https://www.coupang.com/np/signup"
+                }
+            },
+            "validation": {
+                "type": "url_contains",
+                "value": "signup"
+            },
+            "fallback": "회원가입 페이지 접속에 실패했습니다.",
+            "next_step": 2
+        },
+        {
+            "step_id": 2,
+            "name": "input_email",
+            "prompt": "이메일 주소를 말씀해주세요.",
+            "required_fields": ["email"],
+            "action": {
+                "tool_name": "fill_input",
+                "arguments": {
+                    "selector": "#email, input[name='email']",
+                    "value": "{email}"
+                }
+            },
+            "fallback": "이메일 입력에 실패했습니다.",
+            "next_step": 3
+        },
+        {
+            "step_id": 3,
+            "name": "input_password",
+            "prompt": "비밀번호는 보안을 위해 직접 입력해주세요. 키보드로 입력 후 완료라고 말씀해주세요.",
+            "required_fields": [],
+            "user_confirmation": true,
+            "action": null,
+            "fallback": "비밀번호 입력을 건너뜁니다.",
+            "next_step": 4
+        },
+        {
+            "step_id": 4,
+            "name": "input_name",
+            "prompt": "이름을 말씀해주세요.",
+            "required_fields": ["name"],
+            "action": {
+                "tool_name": "fill_input",
+                "arguments": {
+                    "selector": "#name, input[name='name']",
+                    "value": "{name}"
+                }
+            },
+            "fallback": "이름 입력에 실패했습니다.",
+            "next_step": 5
+        },
+        {
+            "step_id": 5,
+            "name": "input_phone",
+            "prompt": "휴대폰 번호를 말씀해주세요. 숫자만 말씀해주시면 됩니다.",
+            "required_fields": ["phone"],
+            "action": {
+                "tool_name": "fill_input",
+                "arguments": {
+                    "selector": "#phone, input[name='phone']",
+                    "value": "{phone}"
+                }
+            },
+            "fallback": "전화번호 입력에 실패했습니다.",
+            "next_step": 6
+        },
+        {
+            "step_id": 6,
+            "name": "agree_terms",
+            "prompt": "약관 동의가 필요합니다. 전체 동의를 진행할까요?",
+            "user_confirmation": true,
+            "action": {
+                "tool_name": "click_element",
+                "arguments": {
+                    "selector": ".agree-all, #agreeAll"
+                }
+            },
+            "fallback": "약관 동의를 건너뜁니다.",
+            "next_step": 7
+        },
+        {
+            "step_id": 7,
+            "name": "submit_signup",
+            "prompt": "회원가입을 완료합니다.",
+            "action": {
+                "tool_name": "click_element",
+                "arguments": {
+                    "selector": ".signup-btn, button[type='submit']"
+                }
+            },
+            "validation": {
+                "type": "selector_exists",
+                "selector": ".signup-complete, .welcome"
+            },
+            "fallback": "회원가입 처리 중 문제가 발생했습니다."
+        }
+    ]
+}

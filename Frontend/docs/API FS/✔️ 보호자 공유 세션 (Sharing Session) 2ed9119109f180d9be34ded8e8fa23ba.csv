@@ -1,0 +1,4 @@
+﻿기능,HTTP 메서드,API Path,Request,Response
+공유 세션 시작,POST,/sharing/sessions,"RequestSessions (https://www.notion.so/RequestSessions-2ed9119109f18053a65ad782ce849882?pvs=21) ","ResponseSessions (https://www.notion.so/ResponseSessions-2ed9119109f180458479f1fe6ff5978d?pvs=21) "
+세션 참가,POST,/sharing/sessions/join,"RequestSessionsJoin (https://www.notion.so/RequestSessionsJoin-2ed9119109f1809fb42acf0958d23c97?pvs=21) ","ResponseSessionsJoin (https://www.notion.so/ResponseSessionsJoin-2ed9119109f18023a116ce1579327de7?pvs=21) "
+세션 종료,PATCH,/sharing/sessions/{id}/end,,"ResponseSessionsEnd (https://www.notion.so/ResponseSessionsEnd-2ed9119109f180049b75f85f3daf810a?pvs=21) "

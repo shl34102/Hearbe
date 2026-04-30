@@ -1,0 +1,55 @@
+{
+    "site_id": "coupang",
+    "name": "쿠팡",
+    "domains": [
+        "coupang.com",
+        "www.coupang.com",
+        "login.coupang.com"
+    ],
+    "urls": {
+        "home": "https://www.coupang.com/",
+        "login": "https://login.coupang.com/login/login.pang?rtnUrl=https%3A%2F%2Fwww.coupang.com%2F",
+        "cart": "https://cart.coupang.com/cartView.pang",
+        "mypage": "https://mc.coupang.com/ssr/desktop/order/list"
+    },
+    "selectors": {
+        "search": {
+            "input": "input[name=\"q\"]",
+            "button": ".headerSearchBtn",
+            "submit_key": "Enter"
+        },
+        "login": {
+            "email_input": "#login-email-input",
+            "password_input": "#login-password-input",
+            "submit_button": ".login__button--submit"
+        },
+        "signup": {
+            "email_input": "#join-email-input",
+            "password_input": "#join-password-input",
+            "password_confirm_input": "#join-password-again-input",
+            "name_input": "#join-name-input",
+            "phone_input": "#join-phone-input",
+            "terms_all_checkbox": "label[for='chk_checkall']"
+        },
+        "cart": {
+            "button": ".cart-button, [class*='cart'], a[href*='cart']",
+            "item_list": ".cart-item",
+            "checkout_button": ".checkout-button"
+        },
+        "product": {
+            "add_to_cart": ".prod-buy-btn, button[class*='cart']",
+            "buy_now": ".prod-direct-buy-btn",
+            "quantity_input": ".prod-quantity input"
+        },
+        "checkout": {
+            "pay_button": ".payment-button",
+            "address_confirm": ".address-item.selected"
+        }
+    },
+    "patterns": {
+        "search_page": "/np/search",
+        "product_page": "/vp/products/",
+        "cart_page": "/cartView",
+        "checkout_page": "/order"
+    }
+}

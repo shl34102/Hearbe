@@ -1,0 +1,10 @@
+# Coupang search smoke test (from Hearbe mall)
+# Expectation (high-level):
+# - On /C|/A/mall, "쿠팡으로 이동" should navigate to Coupang.
+# - Search should work and "검색 결과 읽어줘" should read extracted results (read-only pipeline, no TTS LLM rewrite).
+
+현재 페이지 정보 읽어줘
+쿠팡으로 이동해줘
+삼겹살 검색해줘
+검색 결과 읽어줘
+

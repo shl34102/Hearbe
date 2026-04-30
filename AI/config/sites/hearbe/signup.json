@@ -1,0 +1,19 @@
+{
+  "page_type": "signup",
+  "url_pattern": "/[ABC]/signup",
+  "description": "Hearbe signup page",
+  "selectors": {
+    "username_input": "input[name='username'], input[name='id'], input[placeholder='아이디'], input[placeholder*='아이디'], input[placeholder*='영문, 숫자 포함']",
+    "password_input": "input[name='password'], input[placeholder*='비밀번호'], input[placeholder*='간편 비밀번호']",
+    "password_confirm_input": "input[name='confirmPassword'], input[name='passwordConfirm'], input[placeholder*='비밀번호 재확인']",
+    "name_input": "input[name='name'], input[placeholder='이름'], input[placeholder*='성함']",
+    "email_input": "input[name='email'], input[placeholder*='이메일']",
+    "phone_input": "input[name='phone'], input[placeholder*='휴대'], input[placeholder*='010-']",
+    "terms_checkbox": "input#all, input[name='all'], label.terms-all-a-new input[type='checkbox']",
+    "username_check_button": "button.check-duplicate-btn-c, button.check-btn-a-new, button:has-text('중복확인'), button:has-text('확인완료'), button:has-text('확인됨')",
+    "submit_button": "button:has-text('회원가입'), button.signup-submit-btn-a-new",
+    "modal_confirm": "button.swal2-confirm",
+    "terms_modal_confirm": "button.modal-btn-c.term-confirm-btn, button.terms-modal-confirm-btn-a-new",
+    "signup_complete_confirm": "button.modal-btn-c:not(.term-confirm-btn)"
+  }
+}

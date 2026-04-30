@@ -1,0 +1,17 @@
+# Coupang: order list -> order detail regression test
+#
+# Goals
+# - Navigate to Coupang order list
+# - Read the order list summary
+# - Open Nth order detail (must land on mc.coupang.com/ssr/desktop/order/{id})
+# - Verify delivery-tracking style intent is handled on order detail page
+#
+# Notes
+# - This should not cancel orders.
+
+쿠팡으로 이동
+주문 목록으로 이동
+주문 목록 보여줘
+3번째 주문 상세보기
+배송 조회해줘
+

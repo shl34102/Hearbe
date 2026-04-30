@@ -1,0 +1,5 @@
+﻿기능,HTTP 메서드,API Path,Request,Response
+장바구니 담기,POST,/cart,"RequestCart (https://www.notion.so/RequestCart-2ed9119109f180a68082f1254371cdfc?pvs=21) ","ResponseCart (https://www.notion.so/ResponseCart-2ed9119109f180f38383c67f72852f80?pvs=21) "
+장바구니 목록,GET,/cart,,"ResponseCartList (https://www.notion.so/ResponseCartList-2ed9119109f18069b903e712e00fd23f?pvs=21) "
+장바구니 수정,PATCH,/cart/{cart_item_id},"RequestCartUpdate (https://www.notion.so/RequestCartUpdate-2ed9119109f180a2a6c1c2926fc1822b?pvs=21) ","ResponseCartUpdate (https://www.notion.so/ResponseCartUpdate-2ed9119109f180fe86e5e171939d8857?pvs=21) "
+장바구니 삭제,DELETE,/cart/{cart_item_id},,

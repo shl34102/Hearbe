@@ -1,0 +1,9 @@
+{
+  "page_type": "search",
+  "url_pattern": "/search/",
+  "description": "네이버쇼핑 검색 결과 페이지",
+  "selectors": {
+    "product_list": ".basicList_list_basis__uNBZx",
+    "product_item": ".basicList_item__0T9JD"
+  }
+}

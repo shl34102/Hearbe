@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "buttons": [
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.icon",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.icon",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.icon",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.icon",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.icon",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "동의하고 가입하기",
+      "selector": "button.join__button",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "모두 확인하였으며 동의합니다",
+      "selector": "label[for=\"chk_checkall\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "만 14세 이상입니다",
+      "selector": "label[for=\"chk_join-terms-fourteen\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "쿠팡 이용약관 동의",
+      "selector": "label[for=\"chk_join-terms-service\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "전자금융거래 이용약관 동의",
+      "selector": "label[for=\"chk_join-terms-commerce\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "개인정보 제3자 제공 동의",
+      "selector": "label[for=\"chk_agree-to-collect-third-part-information\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "마케팅 목적의 개인정보 수집 및 이용 동의",
+      "selector": "label[for=\"chk_POLICY_AGREE_COLLECT\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "광고성 정보 수신 동의",
+      "selector": "label[for=\"chk_agree-to-receive-ads\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "이메일 수신 동의",
+      "selector": "label[for=\"chk_POLICY_AGREE_EMAIL\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "SMS, SNS 수신 동의",
+      "selector": "label[for=\"chk_POLICY_AGREE_SMS\"]",
+      "visible": true
+    },
+    {
+      "type": "checkbox",
+      "text": "앱 푸시 수신 동의",
+      "selector": "label[for=\"chk_POLICY_AGREE_MARKETING_PUSH\"]",
+      "visible": true
+    }
+  ],
+  "count": 16
+}

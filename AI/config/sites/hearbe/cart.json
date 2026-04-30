@@ -1,0 +1,7 @@
+{
+  "page_type": "hearbe_cart",
+  "url_pattern": "/[ABC]/cart",
+  "description": "Hearbe cart page",
+  "selectors": {}
+}
+

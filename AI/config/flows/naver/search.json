@@ -1,0 +1,64 @@
+{
+    "flow_id": "naver_search",
+    "flow_type": "search",
+    "site": "naver",
+    "total_steps": 4,
+    "steps": [
+        {
+            "step_id": 1,
+            "name": "navigate_to_site",
+            "prompt": "네이버 쇼핑에 접속합니다.",
+            "action": {
+                "tool_name": "navigate_to_url",
+                "arguments": {
+                    "url": "https://shopping.naver.com"
+                }
+            },
+            "validation": {
+                "type": "url_contains",
+                "value": "shopping.naver.com"
+            },
+            "fallback": "네이버 쇼핑 접속에 실패했습니다.",
+            "next_step": 2
+        },
+        {
+            "step_id": 2,
+            "name": "input_search_keyword",
+            "prompt": "{keyword}을(를) 검색합니다.",
+            "required_fields": ["keyword"],
+            "action": {
+                "tool_name": "fill_input",
+                "arguments": {
+                    "selector": "input[name='query'], .search_input",
+                    "value": "{keyword}"
+                }
+            },
+            "fallback": "검색어 입력에 실패했습니다.",
+            "next_step": 3
+        },
+        {
+            "step_id": 3,
+            "name": "click_search_button",
+            "prompt": "검색 버튼을 클릭합니다.",
+            "action": {
+                "tool_name": "click_element",
+                "arguments": {
+                    "selector": ".search_btn, button[type='submit']"
+                }
+            },
+            "validation": {
+                "type": "selector_exists",
+                "selector": ".product_list, .search_result"
+            },
+            "fallback": "검색 결과를 불러오지 못했습니다.",
+            "next_step": 4
+        },
+        {
+            "step_id": 4,
+            "name": "announce_results",
+            "prompt": "검색 결과가 표시되었습니다. 원하시는 상품을 말씀해주세요.",
+            "action": null,
+            "user_confirmation": false
+        }
+    ]
+}

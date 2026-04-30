@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <property name="LOG_FILE" value="${LOG_PATH:-./logs}/app.log" />
+    <property name="APP_NAME" value="hearbe" />
+
+    <!-- ========================================
+         Console Appender (JSON 형식 - Dev/Prod 공통)
+         ======================================== -->
+    <appender name="CONSOLE_JSON" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeCallerData>false</includeCallerData>
+            <includeMdc>true</includeMdc>
+            <includeContext>false</includeContext>
+            <customFields>{"app":"${APP_NAME}"}</customFields>
+            <fieldNames>
+                <timestamp>timestamp</timestamp>
+                <level>level</level>
+                <logger>logger</logger>
+                <thread>thread</thread>
+                <message>message</message>
+                <stackTrace>stack_trace</stackTrace>
+            </fieldNames>
+            <!-- Stack Trace를 자동으로 JSON 필드에 포함 -->
+            <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                <maxLength>8192</maxLength>
+                <shortenedClassNameLength>36</shortenedClassNameLength>
+                <exclude>sun\.reflect\..*</exclude>
+                <exclude>net\.sf\.cglib\..*</exclude>
+                <rootCauseFirst>true</rootCauseFirst>
+                <inlineHash>true</inlineHash>
+            </throwableConverter>
+        </encoder>
+    </appender>
+
+    <!-- ========================================
+         File Appender (JSON 형식)
+         ======================================== -->
+    <appender name="FILE_JSON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>5GB</totalSizeCap>
+        </rollingPolicy>
+        
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeCallerData>false</includeCallerData>
+            <includeMdc>true</includeMdc>
+            <includeContext>false</includeContext>
+            <customFields>{"app":"${APP_NAME}"}</customFields>
+            <fieldNames>
+                <timestamp>timestamp</timestamp>
+                <level>level</level>
+                <logger>logger</logger>
+                <thread>thread</thread>
+                <message>message</message>
+                <stackTrace>stack_trace</stackTrace>
+            </fieldNames>
+            <!-- Stack Trace를 자동으로 JSON 필드에 포함 -->
+            <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                <maxLength>8192</maxLength>
+                <shortenedClassNameLength>36</shortenedClassNameLength>
+                <exclude>sun\.reflect\..*</exclude>
+                <exclude>net\.sf\.cglib\..*</exclude>
+                <rootCauseFirst>true</rootCauseFirst>
+                <inlineHash>true</inlineHash>
+            </throwableConverter>
+        </encoder>
+    </appender>
+
+    <!-- ========================================
+         Development Profile
+         ======================================== -->
+    <springProfile name="dev">
+        <!-- 기본 로그 레벨: INFO -->
+        <root level="INFO">
+            <appender-ref ref="CONSOLE_JSON" />
+            <appender-ref ref="FILE_JSON" />
+        </root>
+
+        <!-- 우리 애플리케이션: DEBUG -->
+        <logger name="com.ssafy.d108" level="DEBUG" />
+
+        <!-- SQL 쿼리: DEBUG -->
+        <logger name="org.hibernate.SQL" level="DEBUG" />
+        
+        <!-- SQL 파라미터: TRACE -->
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" />
+
+        <!-- Hibernate 경고 억제 -->
+        <logger name="org.hibernate.engine.jdbc.spi.SqlExceptionHelper" level="ERROR" />
+        <logger name="org.hibernate.tool.schema" level="ERROR" />
+        <logger name="org.hibernate.orm.deprecation" level="ERROR" />
+        <logger name="org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator" level="ERROR" />
+        
+        <!-- Spring Framework: INFO -->
+        <logger name="org.springframework" level="INFO" />
+        <logger name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="DEBUG" />
+        <logger name="org.springframework.security" level="INFO" />
+        
+        <!-- Spring Security 기본 사용자 경고 억제 -->
+        <logger name="org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration" level="ERROR" />
+    </springProfile>
+
+    <!-- ========================================
+         Production Profile
+         ======================================== -->
+    <springProfile name="prod">
+        <!-- 기본 로그 레벨: WARN -->
+        <root level="WARN">
+            <appender-ref ref="CONSOLE_JSON" />
+            <appender-ref ref="FILE_JSON" />
+        </root>
+
+        <!-- 우리 애플리케이션: WARN -->
+        <logger name="com.ssafy.d108" level="WARN" />
+
+        <!-- SQL: ERROR -->
+        <logger name="org.hibernate.SQL" level="ERROR" />
+
+        <!-- Hibernate 경고 완전 억제 -->
+        <logger name="org.hibernate.engine.jdbc.spi.SqlExceptionHelper" level="ERROR" />
+        <logger name="org.hibernate.tool.schema" level="ERROR" />
+        <logger name="org.hibernate.orm.deprecation" level="ERROR" />
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="ERROR" />
+        <logger name="org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator" level="ERROR" />
+        
+        <!-- Spring Framework: WARN -->
+        <logger name="org.springframework" level="WARN" />
+        
+        <!-- Shutdown INFO 로그 억제 (Prod에서 불필요) -->
+        <logger name="org.springframework.boot.web.embedded.tomcat.GracefulShutdown" level="ERROR" />
+        <logger name="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" level="ERROR" />
+        <logger name="com.zaxxer.hikari.HikariDataSource" level="ERROR" />
+        
+        <!-- Spring Security 기본 사용자 경고 억제 -->
+        <logger name="org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration" level="ERROR" />
+    </springProfile>
+</configuration>

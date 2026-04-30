@@ -1,0 +1,30 @@
+{
+  "page_type": "return",
+  "url_pattern": "mc\\.coupang\\.com/ssr/desktop/universal-flow",
+  "description": "쿠팡 교환/반품 신청 페이지",
+  "selectors": {
+    "search_input": "#headerSearchKeyword",
+    "search_button": "#headerSearchBtn",
+    "next_step": "button:has-text('다음 단계')",
+    "prev_step": "button:has-text('이전 단계')",
+    "submit": "button:has-text('신청하기')",
+    "reason_changemind": "#uf_reason_CHANGEMIND",
+    "reason_nolongerneed": "#uf_reason_NOLONGERNEED",
+    "reason_others": "#uf_reason_OTHERS",
+    "reason_cheaper": "#uf_reason_CHEAPER",
+    "reason_wrongdelivery": "#uf_reason_WRONGDELIVERY",
+    "reason_lost": "#uf_reason_LOST",
+    "reason_addresswrongshipped": "#uf_reason_ADDRESSWRONGSHIPPED",
+    "reason_compomiss": "#uf_reason_COMPOMISS",
+    "reason_inaccurate": "#uf_reason_INACCURATE",
+    "reason_damaged": "#uf_reason_DAMAGED",
+    "reason_defect": "#uf_reason_DEFECT",
+    "solution_refund": "span:has-text('반품 후 환불')",
+    "change_pickup_address": "span:has-text('변경하기')",
+    "pickup_date_tomorrow": "span:has-text('내일')",
+    "pickup_date_other": "span:has-text('다른 날을 선택하세요')",
+    "pickup_location_door": "span:has-text('문 앞')",
+    "pickup_location_security": "span:has-text('경비실')",
+    "pickup_location_other": "span:has-text('그 외 장소')"
+  }
+}

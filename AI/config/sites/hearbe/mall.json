@@ -1,0 +1,16 @@
+{
+  "page_type": "mall",
+  "url_pattern": "/[ABC]/mall",
+  "description": "Hearbe mall page",
+  "selectors": {
+    "nav_cart": "button:has-text('장바구니'), button:has-text('카트')",
+    "nav_mypage": "button:has-text('마이페이지'), button:has-text('마이')",
+    "nav_logout": "button:has-text('로그아웃')",
+    "logout_confirm": "button.swal2-confirm",
+    "logout_cancel": "button.swal2-cancel",
+    "open_coupang": "div.mall-card-new-c:has-text('쿠팡'), button.mall-item-a:has-text('쿠팡')",
+    "open_naver": "div.mall-card-new-c:has-text('네이버 쇼핑'), button.mall-item-a:has-text('네이버 쇼핑')",
+    "open_11st": "div.mall-card-new-c:has-text('11번가'), button.mall-item-a:has-text('11번가')",
+    "open_ssg": "div.mall-card-new-c:has-text('SSG'), button.mall-item-a:has-text('SSG')"
+  }
+}

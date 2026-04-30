@@ -1,0 +1,2 @@
+This is a placeholder file to keep the downloads directory in git.
+Real zip artifacts are intentionally ignored.

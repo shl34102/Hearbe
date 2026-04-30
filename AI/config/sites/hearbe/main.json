@@ -1,0 +1,13 @@
+{
+  "page_type": "main",
+  "url_pattern": "/main",
+  "description": "Hearbe main page",
+  "selectors": {
+    "mode_audio": "button.mode-item:has-text('음성 안내 쇼핑')",
+    "mode_big": "button.mode-item:has-text('큰 글씨 쇼핑')",
+    "mode_common": "button.mode-item:has-text('일반 쇼핑')",
+    "mode_sharing": "button.mode-item:has-text('공유 쇼핑')",
+    "reset_button": "button.btn-secondary:has-text('테스트 초기화')",
+    "settings_helper_button": "button.btn-setting-helper:has-text('설정 도우미')"
+  }
+}

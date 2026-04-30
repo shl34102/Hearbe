@@ -1,0 +1,9 @@
+{
+  "page_type": "main",
+  "url_pattern": "^https://shopping\\.naver\\.com/?$",
+  "description": "네이버쇼핑 메인 페이지",
+  "selectors": {
+    "search_input": "input._searchInput_search_text_3CUDs",
+    "search_button": "button._searchInput_button_search_1n1aw"
+  }
+}

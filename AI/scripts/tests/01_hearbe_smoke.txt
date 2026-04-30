@@ -1,0 +1,13 @@
+# Hearbe platform smoke test (user-perspective)
+# Expectation (high-level):
+# - App starts -> redirects to /main -> session gate -> /C|/A/mall
+# - "현재 페이지 정보" should describe mall page (no Coupang product-info tone)
+# - Basic navigation commands should move within Hearbe (if rules exist); otherwise LLM fallback should at least respond.
+
+현재 페이지 정보 읽어줘
+내 정보 보여줘
+주문 내역 보여줘
+찜한 상품 보여줘
+장바구니로 이동
+현재 페이지 정보 읽어줘
+

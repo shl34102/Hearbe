@@ -1,0 +1,31 @@
+{
+  "page_type": "checkout",
+  "url_pattern": "checkout\\.coupang\\.com",
+  "description": "쿠팡 결제 페이지",
+  "selectors": {
+    "change_address": "button:has-text('배송지 변경')",
+    "change_delivery_option": "button:has-text('변경')",
+    "input_cash_receipt": "button:has-text('입력')",
+    "use_all_cash": "button:has-text('전액사용')",
+    "view_detail": "button:has-text('보기')",
+    "pay_button": "button:has-text('결제하기')",
+    "payment_method_select": "#react-select-2-input",
+    "coupon_input": "input[type='text']",
+    "order_steps": "[class*='order']",
+    "other_payment_method": "[class*='order']:has-text('다른 결제 수단')",
+    "default_payment": "[class*='checkout']:has-text('기본 결제 수단으로 사용')",
+    "keypad_frame": "iframe[src*='payment.coupang.com/v4/payments/payment']",
+    "keypad_container": ".pad",
+    "keypad_key_0": "a.pad-key[data-key='0']",
+    "keypad_key_1": "a.pad-key[data-key='1']",
+    "keypad_key_2": "a.pad-key[data-key='2']",
+    "keypad_key_3": "a.pad-key[data-key='3']",
+    "keypad_key_4": "a.pad-key[data-key='4']",
+    "keypad_key_5": "a.pad-key[data-key='5']",
+    "keypad_key_6": "a.pad-key[data-key='6']",
+    "keypad_key_7": "a.pad-key[data-key='7']",
+    "keypad_key_8": "a.pad-key[data-key='8']",
+    "keypad_key_9": "a.pad-key[data-key='9']",
+    "keypad_delete": "a.pad-edit"
+  }
+}

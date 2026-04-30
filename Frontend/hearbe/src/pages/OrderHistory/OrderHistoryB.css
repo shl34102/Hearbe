@@ -1,0 +1,553 @@
+/* Order History Page Styles */
+/* body 배경색은 index.css에서 중앙 관리 */
+
+
+
+
+
+
+
+
+
+.orderhistory-container {
+    min-height: 100vh;
+    background-color: #141C29;
+    padding: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.orderhistory-logo-left {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    width: 320px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Back Button Override */
+.orderhistory-container .global-back-button.arrow-only {
+    left: clamp(20px, 5vw, 40px);
+    top: clamp(20px, 5vw, 40px);
+}
+
+.orderhistory-container .global-back-button.arrow-only .back-arrow-svg {
+    width: clamp(40px, 10vw, 80px);
+    height: clamp(40px, 10vw, 80px);
+}
+
+.orderhistory-container .orderhistory-content {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding: 20px 40px 60px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+/* Sidebar Navigation - C형 스타일 카드화 */
+.orderhistory-sidebar {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-menu-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-item {
+    font-size: 32px;
+    /* 48px는 너무 클 수 있으므로 36px로 먼저 시도, 그래도 메뉴명 폰트가 크므로 적절히 조정 */
+    /* 사용자 요청: "메뉴들 이름 있짜나 ... 그 폰트 크기랑 일치하게" -> .content-title은 48px임.
+       하지만 사이드바 폭이 320px이고 메뉴가 5개이므로 48px은 사이드바를 넘칠 수 있음.
+       일단 40px 정도로 대폭 키우고 줄바꿈 허용 등으로 처리해야 함. */
+    font-weight: 950;
+    color: #FFF064;
+    padding: 20px 24px;
+    /* 패딩 증가 */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Pretendard', sans-serif;
+    text-align: left;
+    border: none;
+    background: transparent;
+    line-height: 1.3;
+    /* 줄간격 확보 */
+}
+
+.sidebar-item:hover {
+    background-color: rgba(255, 240, 100, 0.1);
+}
+
+.sidebar-item.active {
+    background-color: #FFF064;
+    color: #141C29;
+}
+
+/* Main Content - 카드 형태로 묶음 */
+.orderhistory-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 48px;
+    font-weight: 950;
+    color: #FFF064;
+    margin-bottom: 30px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Orders Container */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+/* Date Group - Contains date header + multiple platform sections */
+.date-group-a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Date Header */
+.date-header-main-a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #FFF064;
+}
+
+.date-indicator-a {
+    width: 6px;
+    height: 50px;
+    background-color: #FFF064;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.date-title-a {
+    font-size: 32px;
+    font-weight: 950;
+    color: #FFF064;
+    margin: 0;
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1;
+}
+
+/* Platform Section - Individual platform within a date */
+.platform-section-a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Platform Header */
+.platform-header-a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 2px solid rgba(255, 240, 100, 0.3);
+}
+
+.platform-name-a {
+    font-size: 32px;
+    font-weight: 950;
+    color: #FFF064;
+    margin: 0;
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1;
+}
+
+
+/* Order Detail Button in Header */
+.btn-order-detail {
+    padding: 12px 24px;
+    background-color: #FFF064;
+    color: #141C29;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Pretendard', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-order-detail:hover:not(:disabled) {
+    background-color: #FFE54D;
+    transform: scale(1.05);
+}
+
+.btn-order-detail:disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Order Items List */
+.order-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2.5vw, 18px);
+}
+
+/* Order Item Card */
+.order-item-card {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 24px);
+    padding: clamp(16px, 3vw, 24px);
+    background-color: #121521;
+    border: 2px solid rgba(255, 240, 100, 0.2);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.order-item-card:hover {
+    transform: translateY(-4px);
+    border-color: #FFF064;
+    box-shadow: 0 8px 16px rgba(255, 240, 100, 0.2);
+}
+
+/* Item Image */
+.item-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.item-placeholder {
+    font-size: 40px;
+}
+
+/* Item Info */
+.item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4px, 1vw, 8px);
+    min-width: 0;
+}
+
+.item-name {
+    font-size: clamp(28px, 6vw, 32px);
+    font-weight: 900;
+    color: #FFF064;
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-price-a {
+    font-size: clamp(18px, 5vw, 26px);
+    font-weight: 900;
+    color: #FFF064;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Item Quantity */
+.item-quantity {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 900;
+    color: #FFF064;
+    font-family: 'Pretendard', sans-serif;
+    padding: clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px);
+    background-color: rgba(255, 240, 100, 0.1);
+    border: 2px solid #FFF064;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Item Actions */
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 12px);
+    flex-shrink: 0;
+}
+
+.btn-product-detail,
+.btn-delivery-track {
+    padding: 10px 20px;
+    border: 2px solid #FFF064;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'Pretendard', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+.btn-product-detail {
+    background-color: #FFF064;
+    color: #141C29;
+}
+
+.btn-product-detail:hover:not(:disabled) {
+    background-color: #FFE54D;
+    transform: scale(1.05);
+}
+
+.btn-delivery-track {
+    background-color: transparent;
+    color: #FFF064;
+}
+
+.btn-delivery-track:hover:not(:disabled) {
+    background-color: rgba(255, 240, 100, 0.1);
+    transform: scale(1.05);
+}
+
+.btn-product-detail:disabled,
+.btn-delivery-track:disabled {
+    background-color: #555;
+    color: #888;
+    border-color: #555;
+    cursor: not-allowed;
+}
+
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(60px, 10vw, 100px);
+    gap: clamp(16px, 3vw, 24px);
+}
+
+.loading-state .spinner {
+    width: clamp(40px, 8vw, 60px);
+    height: clamp(40px, 8vw, 60px);
+    border: clamp(3px, 0.6vw, 5px) solid rgba(255, 240, 100, 0.3);
+    border-top-color: #FFF064;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-state p {
+    font-size: clamp(18px, 3.5vw, 28px);
+    font-weight: bold;
+    color: #FFF064;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Error State */
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(60px, 10vw, 100px);
+    gap: clamp(12px, 2.5vw, 20px);
+}
+
+.error-state .error-message {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    color: #FF6B6B;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    text-align: center;
+}
+
+.error-state .error-detail {
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: #AAAAAA;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    text-align: center;
+}
+
+.error-state .retry-btn {
+    margin-top: clamp(8px, 2vw, 16px);
+    padding: clamp(12px, 2.5vw, 18px) clamp(28px, 5vw, 40px);
+    background-color: #FFF064;
+    color: #1E2A3A;
+    border: none;
+    border-radius: clamp(6px, 1.5vw, 10px);
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    transition: opacity 0.2s;
+}
+
+.error-state .retry-btn:hover {
+    opacity: 0.9;
+}
+
+/* Empty State */
+.empty-orders {
+    text-align: center;
+    padding: clamp(60px, 10vw, 100px);
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    color: #FFF064;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 1024px),
+(max-height: 900px) {
+    .orderhistory-container .orderhistory-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .orderhistory-main {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .orderhistory-container .orderhistory-content {
+        flex-direction: column;
+    }
+
+    .orderhistory-sidebar {
+        flex: none;
+    }
+
+    .order-item-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-actions {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .btn-product-detail,
+    .btn-delivery-track {
+        flex: 1;
+    }
+}
+
+/* MyPage Top Bar */
+.mypage-topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 40px 0;
+    margin-bottom: 30px;
+    /* 헤더 아래 공간 추가 */
+}
+
+.mypage-topbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    color: #FFF064;
+    margin: 0;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.mypage-topbar-actions {
+    display: flex;
+    gap: 30px;
+}
+
+.topbar-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    color: #FFF064;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 21px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.topbar-action:hover {
+    background-color: rgba(255, 240, 100, 0.12);
+}
+
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 12px);
+    align-items: flex-end;
+    padding-right: 25px;
+    /* 버튼 우측 여백 추가 */
+    padding-bottom: 15px;
+    /* 하단 여백 추가 -> 아이템과 높이 균형 */
+    justify-content: center;
+}

@@ -1,0 +1,190 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+.intro-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #0f0d15;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f3f0ff;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.skip-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    z-index: 1100;
+    /* 최상단 유지 */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.skip-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.bg-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.01);
+    letter-spacing: 4rem;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 텍스트 섹션을 Spline 위로 확실히 올림 */
+.text-section {
+    position: relative;
+    margin-top: 18vh;
+    /* 위치 소폭 조정 */
+    text-align: center;
+    z-index: 1000;
+    /* Spline보다 높은 순위 */
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 40px;
+    pointer-events: none;
+    /* 클릭 이벤트가 뒤로 전달되게 함 */
+}
+
+.main-copy {
+    font-size: clamp(2.5rem, 5.2vw, 4.8rem);
+    font-weight: 800;
+    white-space: nowrap;
+    letter-spacing: -0.045em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #d8b4fe 0%, #ffffff 50%, #d8b4fe 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+    animation: textShine 7s linear infinite;
+    pointer-events: auto;
+}
+
+@keyframes textShine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.sub-copy {
+    font-size: 1.6rem;
+    color: #a78bfa;
+    opacity: 0.7;
+    font-weight: 300;
+    pointer-events: auto;
+}
+
+/* Spline 오브젝트 레이어 하향 조정 */
+.object-section {
+    position: absolute;
+    top: 20%;
+    top: 20%;
+    /* 위쪽 여백 조절 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* 가장 아래 레이어 */
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* [디자인 우선]: 더 웅장한 경험을 위해 사용자님의 스케일(1.5) 유지 */
+    transform: scale(1.5);
+}
+
+.abstract-orb {
+    width: 60vw;
+    height: 60vw;
+    max-width: 600px;
+    max-height: 600px;
+    background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.8), rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(139, 92, 246, 0.3), inset 0 0 60px rgba(196, 181, 253, 0.4);
+    filter: blur(40px);
+    animation: orbFloat 10s ease-in-out infinite alternate;
+    opacity: 0.8;
+}
+
+@keyframes orbFloat {
+    0% {
+        transform: translateY(0) scale(1);
+        filter: blur(40px) hue-rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-50px) scale(1.1);
+        filter: blur(50px) hue-rotate(15deg);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        filter: blur(40px) hue-rotate(0deg);
+    }
+}
+
+.action-section {
+    position: absolute;
+    bottom: 8%;
+    z-index: 1000;
+}
+
+.dot-indicator {
+    display: flex;
+    gap: 16px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+.dot.active {
+    background: #c4b5fd;
+    width: 40px;
+    border-radius: 10px;
+}
+
+.transition-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150vmax;
+    height: 150vmax;
+    background: radial-gradient(circle, #e9d5ff 0%, #8b5cf6 30%, #5b21b6 70%, #2e1065 100%);
+    border-radius: 50%;
+    z-index: 2000;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 200px rgba(139, 92, 246, 0.5);
+    filter: blur(20px);
+}
+
+.purple-aura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 80%);
+    z-index: 1;
+}

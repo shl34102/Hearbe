@@ -1,0 +1,23 @@
+{
+  "page_type": "signup",
+  "url_pattern": "login\\.coupang\\.com/login/memberJoin",
+  "description": "쿠팡 회원가입 페이지",
+  "selectors": {
+    "email_input": "#join-email-input",
+    "password_input": "#join-password-input",
+    "password_confirm_input": "#join-password-again-input",
+    "name_input": "#join-name-input",
+    "phone_input": "#join-phone-input",
+    "submit_button": "button.join__button",
+    "checkbox_all": "label[for=\"chk_checkall\"]",
+    "checkbox_age": "label[for=\"chk_join-terms-fourteen\"]",
+    "checkbox_terms": "label[for=\"chk_join-terms-service\"]",
+    "checkbox_finance": "label[for=\"chk_join-terms-commerce\"]",
+    "checkbox_privacy": "label[for=\"chk_agree-to-collect-third-part-information\"]",
+    "checkbox_marketing": "label[for=\"chk_POLICY_AGREE_COLLECT\"]",
+    "checkbox_ads": "label[for=\"chk_agree-to-receive-ads\"]",
+    "checkbox_email": "label[for=\"chk_POLICY_AGREE_EMAIL\"]",
+    "checkbox_sms": "label[for=\"chk_POLICY_AGREE_SMS\"]",
+    "checkbox_push": "label[for=\"chk_POLICY_AGREE_MARKETING_PUSH\"]"
+  }
+}

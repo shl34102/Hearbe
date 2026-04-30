@@ -1,0 +1,438 @@
+/* body 배경색은 index.css에서 중앙 관리 */
+/* Wishlist Page Styles */
+
+.wishlist-container {
+    min-height: 100vh;
+    background-color: #141C29;
+    padding: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 링크 기본 스타일 리셋 */
+.wishlist-container a,
+.wishlist-container a:link,
+.wishlist-container a:visited,
+.wishlist-container a:hover,
+.wishlist-container a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wishlist-logo-left {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    width: 320px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Back Button Override */
+.wishlist-container .global-back-button.arrow-only {
+    left: clamp(20px, 5vw, 40px);
+    top: clamp(20px, 5vw, 40px);
+}
+
+.wishlist-container .global-back-button.arrow-only .back-arrow-svg {
+    width: clamp(40px, 10vw, 80px);
+    height: clamp(40px, 10vw, 80px);
+}
+
+.wishlist-container .wishlist-content {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding: 20px 40px 60px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+/* Sidebar Navigation - C형 스타일 카드화 */
+.wishlist-sidebar {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-menu-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-item {
+    font-size: 32px;
+    font-weight: 950;
+    color: #FFF064;
+    padding: 20px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Pretendard', sans-serif;
+    text-align: left;
+    border: none;
+    background: transparent;
+    line-height: 1.3;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(255, 240, 100, 0.1);
+}
+
+.sidebar-item.active {
+    background-color: #FFF064;
+    color: #141C29;
+}
+
+/* Main Content - 카드 형태로 묶음 */
+.wishlist-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-card {
+    background-color: #141C29;
+    border: 4px solid #FFF064;
+    border-radius: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 48px;
+    font-weight: 950;
+    color: #FFF064;
+    margin-bottom: 30px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Mall Section */
+/* Mall Section - 개별 카드박스 형태로 복구 */
+.mall-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 40px;
+    background-color: #121521;
+    border: 4px solid #FFF064;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.mall-header {
+    background-color: #FFF064;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mall-header::before {
+    display: none;
+}
+
+.mall-name {
+    font-size: 32px;
+    font-weight: 950;
+    color: #141C29;
+    margin: 0;
+    font-family: 'Pretendard', sans-serif;
+    text-align: left;
+}
+
+
+/* Items List */
+.items-list {
+    display: flex;
+    flex-direction: column;
+    background-color: #121521;
+    margin: clamp(12px, 2.5vw, 20px);
+    border-radius: clamp(10px, 2vw, 14px);
+    overflow: hidden;
+}
+
+.wishlist-item-wrapper {
+    background-color: #121521;
+    border-bottom: clamp(1px, 0.2vw, 2px) solid rgba(255, 240, 100, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+.wishlist-item-wrapper:first-child {
+    border-top: none;
+}
+
+.wishlist-item-wrapper:last-child {
+    border-bottom: none;
+    border-radius: 0 0 clamp(8px, 2vw, 12px) clamp(8px, 2vw, 12px);
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 24px);
+    padding: clamp(16px, 3vw, 24px);
+}
+
+.item-checkbox {
+    flex-shrink: 0;
+}
+
+.item-checkbox input[type="checkbox"] {
+    width: clamp(18px, 4vw, 24px);
+    height: clamp(18px, 4vw, 24px);
+    cursor: pointer;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 1.5vw, 10px);
+}
+
+
+
+.item-name {
+    font-size: clamp(28px, 6vw, 32px);
+    color: #FFF064;
+    font-weight: bold;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    line-height: 1.4;
+}
+
+.item-price-a {
+    font-size: clamp(18px, 5vw, 26px);
+    color: #FFF064;
+    font-weight: 900;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Item Actions */
+.item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.add-cart-btn {
+    padding: clamp(10px, 2vw, 16px) clamp(20px, 3.5vw, 32px);
+    background-color: #FFF064;
+    color: #171C28;
+    border: clamp(2px, 0.4vw, 3px) solid #FFF064;
+    border-radius: clamp(6px, 1.5vw, 10px);
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(60px, 10vw, 100px);
+    gap: clamp(16px, 3vw, 24px);
+}
+
+.loading-state .spinner {
+    width: clamp(40px, 8vw, 60px);
+    height: clamp(40px, 8vw, 60px);
+    border: clamp(3px, 0.6vw, 5px) solid rgba(255, 240, 100, 0.3);
+    border-top-color: #FFF064;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-state p {
+    font-size: clamp(18px, 3.5vw, 28px);
+    font-weight: bold;
+    color: #FFF064;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Error State */
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(60px, 10vw, 100px);
+    gap: clamp(12px, 2.5vw, 20px);
+}
+
+.error-state .error-message {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    color: #FF6B6B;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    text-align: center;
+}
+
+.error-state .error-detail {
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: #AAAAAA;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    text-align: center;
+}
+
+.error-state .retry-btn {
+    margin-top: clamp(8px, 2vw, 16px);
+    padding: clamp(12px, 2.5vw, 18px) clamp(28px, 5vw, 40px);
+    background-color: #FFF064;
+    color: #1E2A3A;
+    border: none;
+    border-radius: clamp(6px, 1.5vw, 10px);
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    transition: opacity 0.2s;
+}
+
+.error-state .retry-btn:hover {
+    opacity: 0.9;
+}
+
+/* Empty State */
+.empty-wishlist {
+    text-align: center;
+    padding: clamp(60px, 10vw, 100px);
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    color: #FFF064;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 1024px),
+(max-height: 900px) {
+    .wishlist-container .wishlist-content {
+        width: 100%;
+        height: auto;
+        /* padding: 32px 100px; */
+    }
+
+    .wishlist-main {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .wishlist-container .wishlist-content {
+        flex-direction: column;
+
+        .wishlist-container .wishlist-content {
+            min-width: 0;
+        }
+    }
+
+    .wishlist-sidebar {
+        flex: none;
+    }
+
+    .wishlist-item {
+        flex-wrap: wrap;
+    }
+
+    .item-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .wishlist-container .wishlist-content {
+        min-width: 0;
+    }
+}
+
+/* MyPage Top Bar */
+.mypage-topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 40px 0;
+    margin-bottom: 30px;
+}
+
+.mypage-topbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    color: #FFF064;
+    margin: 0;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.mypage-topbar-actions {
+    display: flex;
+    gap: 30px;
+}
+
+.topbar-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    color: #FFF064;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 21px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.topbar-action:hover {
+    background-color: rgba(255, 240, 100, 0.12);
+}

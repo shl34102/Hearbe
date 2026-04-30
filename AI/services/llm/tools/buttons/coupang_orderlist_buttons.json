@@ -1,0 +1,186 @@
+{
+  "success": true,
+  "buttons": [
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.sc-izcbvi-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "장바구니 담기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "배송 조회",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "교환, 반품 신청",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "리뷰 작성하기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.sc-izcbvi-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "장바구니 담기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "배송 조회",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "교환, 반품 신청",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "리뷰 작성하기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.sc-izcbvi-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "장바구니 담기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "배송 조회",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "교환, 반품 신청",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "리뷰 작성하기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.sc-izcbvi-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "장바구니 담기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "배송 조회",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "교환, 반품 신청",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "리뷰 작성하기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "판매자 문의",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.sc-izcbvi-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "장바구니 담기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "배송 조회",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "교환, 반품 신청",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "리뷰 작성하기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "이전",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "다음",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "찾고 싶은 상품을 검색해보세요!",
+      "selector": "#headerSearchKeyword",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "주문한 상품을 검색할 수 있어요!",
+      "selector": "input[type=\"text\"]:nth-of-type(2)",
+      "visible": true
+    }
+  ],
+  "count": 30
+}

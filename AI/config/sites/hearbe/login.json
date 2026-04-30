@@ -1,0 +1,16 @@
+{
+  "page_type": "login",
+  "url_pattern": "/[ABC]/login",
+  "description": "Hearbe login page",
+  "selectors": {
+    "id_input": "input[type='text'][placeholder*='아이디'], input[name='id'], input[name='username']",
+    "email_input": "input[type='text'][placeholder*='아이디'], input[name='id'], input[name='username']",
+    "password_input": "input[placeholder*='비밀번호'], input[name='password']",
+    "login_button": "button[type='submit']:has-text('로그인')",
+    "submit_button": "button[type='submit']:has-text('로그인')",
+    "remember_me_checkbox": "input[type='checkbox']#rememberLogin, input[type='checkbox'][id*='remember' i]",
+    "signup_link": "a[href$='/signup'], a[href*='/signup']",
+    "find_id_link": "a[href*='/findId'], a[href*='/find-id']",
+    "find_password_link": "a[href*='/findPassword'], a[href*='/find-password']"
+  }
+}

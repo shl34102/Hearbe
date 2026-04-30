@@ -1,0 +1,10 @@
+﻿기능,HTTP 메서드,API Path,Request,Response,담당자,진행여부
+로그인,POST,/auth/login,"RequestLogin (https://www.notion.so/RequestLogin-2ed9119109f1816fa89ef5078dc1551b?pvs=21) ",,,해야 할 일
+회원가입,POST,/auth/regist,"RequestUserRegist (https://www.notion.so/RequestUserRegist-2ed9119109f181a0b947c98cbb5d3baa?pvs=21) ","ResponseRegist (https://www.notion.so/ResponseRegist-2ee9119109f18033bb2fef0c34d64eb6?pvs=21) ",,해야 할 일
+로그아웃,POST,/auth/logout,Authorization: Bearer {access_token},,,해야 할 일
+사용자 정보 조회,GET,/auth/mypage,Authorization: Bearer {access_token},"ResponseMypage (https://www.notion.so/ResponseMypage-2ed9119109f1804b9e88d6d9e83b8e0c?pvs=21) ",,해야 할 일
+비밀번호찾기,POST,/user/findPassword,,,,
+아이디찾기,POST,/user/findId,,,,
+프로필 수정,PATCH,/users/{id},"RequestUpdateProfile (https://www.notion.so/RequestUpdateProfile-2ee9119109f18033ac19c9c9b9ddc6f9?pvs=21) ",,,
+로그인 ID 변경,PATCH,/users/{id}/login_id,"RequestUpdateId (https://www.notion.so/RequestUpdateId-2ee9119109f180379d0eff7c1c33f30e?pvs=21) ",,,
+비밀번호 변경,PATCH,/users/{id}/password,"RequestUpdatePassword (https://www.notion.so/RequestUpdatePassword-2ee9119109f18029bed3d337bbbbd8c3?pvs=21) ",,,

@@ -1,0 +1,29 @@
+{
+  "page_type": "cart",
+  "url_pattern": "cart\\.coupang\\.com/cartView",
+  "description": "쿠팡 장바구니 페이지",
+  "selectors": {
+    "checkout_button": "#btnPay",
+    "select_all_checkbox": "input[type='checkbox'][title='모든 상품을 결제상품으로 설정']",
+    "cart_item_list": "#mainContent, .cart-product-list",
+    "cart_item": "[id^='item_'], .cart-product",
+    "item_checkbox": "input[type='checkbox'][title]:visible",
+    "item_title": "a span.twc-text-custom-black, .product-name",
+    "item_price": "[data-id='sale-price-ccid'], .price, [class*='twc-text-[20px]']",
+    "quantity_input": "input.cart-quantity-input, input[type='text']",
+    "quantity_plus": "[data-component-id='quantity-input'] .twc-bg-plus-icon",
+    "quantity_minus": "[data-component-id='quantity-input'] .twc-bg-minus-icon",
+    "delete_button": "button:has-text(\"삭제\"), a:has-text(\"삭제\"), div:has-text(\"삭제\")",
+    "delete_selected": "div:has-text(\"선택삭제\")",
+    "delete_soldout": "div:has-text('품절/판매종료상품 전체삭제')",
+    "order_estimate_block": "[data-component-id='total-price']",
+    "total_product_price": "[data-component-id='total-price'] div:has-text('총 상품 가격') em[translate='no']",
+    "total_instant_discount": "[data-component-id='total-price'] div:has-text('총 즉시할인') em[translate='no']",
+    "shipping_fee": "[data-component-id='total-price'] div:has-text('총 배송비') em[translate='no']",
+    "total_price": "#finalOrderPrice em[translate='no']",
+    "final_order_price": "#finalOrderPrice em[translate='no']",
+    "order_steps": "[data-component-id='title']",
+    "modal_add_rocket": "[class*='order']:has-text('로켓상품 추가하기')",
+    "modal_checkout_without_extra": "[class*='order']:has-text('추가금액 없이 구매하기')"
+  }
+}

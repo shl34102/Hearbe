@@ -1,0 +1,12 @@
+{
+  "page_type": "shiptrack",
+  "url_pattern": "mc\\.coupang\\.com/ssr/desktop/shiptrack",
+  "description": "쿠팡 배송 조회 페이지",
+  "selectors": {
+    "search_input": "#headerSearchKeyword",
+    "search_button": "#headerSearchBtn",
+    "my_coupang": "a[title*='마이쿠팡']",
+    "logout": "a[title='로그아웃']",
+    "category_select": "#currentCategoryText"
+  }
+}

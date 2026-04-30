@@ -1,0 +1,186 @@
+{
+  "success": true,
+  "buttons": [
+    {
+      "type": "button",
+      "text": "",
+      "selector": "button.sc-izcbvi-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "장바구니 담기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "배송 조회",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "교환, 반품 신청",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "리뷰 작성하기",
+      "selector": "button.sc-1k9quwu-0",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "현금영수증",
+      "selector": "button.sc-jz28vt-1",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "거래명세서",
+      "selector": "button.sc-jz28vt-1",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "주문목록 돌아가기",
+      "selector": "button.sc-1vg575n-1",
+      "visible": true
+    },
+    {
+      "type": "button",
+      "text": "주문내역 삭제",
+      "selector": "button.sc-1vg575n-1",
+      "visible": true
+    },
+    {
+      "type": "input-field",
+      "text": "찾고 싶은 상품을 검색해보세요!",
+      "selector": "#headerSearchKeyword",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "#로그인 바로가기",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "#메뉴 바로가기",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "#카테고리 바로가기",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "#본문 바로가기",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "전체",
+      "selector": "#currentCategoryText",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "마이크",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "검색",
+      "selector": "#headerSearchBtn",
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "마이쿠팡",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "장바구니\n1",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "쿠팡플레이",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "로켓배송",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "로켓프레시",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "2026 설",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "다시 구매",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "쿠팡비즈",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "로켓직구",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "골드박스",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "이달의신상",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "판매자특가",
+      "selector": null,
+      "visible": true
+    },
+    {
+      "type": "nav-link",
+      "text": "와우회원할인",
+      "selector": null,
+      "visible": true
+    }
+  ],
+  "count": 30
+}

@@ -1,0 +1,278 @@
+.login-c-page {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    font-family: 'Pretendard', sans-serif;
+    position: relative;
+    overflow: hidden;
+    /* 스크롤 방지 */
+    display: flex;
+    flex-direction: column;
+}
+
+.back-button-circle-c {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.back-button-circle-c:hover {
+    transform: scale(1.1);
+    color: #8b5cf6;
+}
+
+.login-c-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* 메인 콘텐츠가 남는 공간을 차지하게 함 */
+    padding: 20px;
+    height: 100%;
+}
+
+.login-c-card {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 60px 60px;
+    /* 상하 패딩 확대 */
+    border-radius: 32px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    z-index: 1;
+    max-height: 90vh;
+    /* 카드 최대 높이 제한 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-area-c {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    /* 마진 축소 */
+}
+
+.logo-image-c {
+    height: 70px;
+    /* 로고 크기 축소 */
+    width: auto;
+    object-fit: contain;
+}
+
+.login-c-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* 간격 확대 */
+}
+
+.login-input-c {
+    width: 100%;
+    padding: 16px 24px;
+    /* 패딩 축소 */
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.login-input-c:focus {
+    border-color: #8b5cf6;
+    background-color: white;
+}
+
+.password-wrapper-c {
+    position: relative;
+}
+
+.password-wrapper-c button {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-submit-btn-c {
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 18px;
+    /* 패딩 축소 */
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 20px;
+    /* 마진 축소 */
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.25);
+    transition: all 0.2s;
+}
+
+.login-submit-btn-c:hover {
+    background-color: #7c3aed;
+    transform: translateY(-2px);
+}
+
+.login-keep-c {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    /* 마진 축소 */
+    font-size: 15px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.login-keep-c input[type="checkbox"] {
+    accent-color: #8b5cf6;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.login-links-c {
+    margin-top: 25px;
+    /* 마진 축소 */
+    font-size: 15px;
+    color: #94a3b8;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.login-links-c span {
+    cursor: pointer;
+}
+
+.login-links-c span:hover {
+    color: #8b5cf6;
+}
+
+
+
+.premium-footer-text-c {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    color: #e2e8f0;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
+/* Password Condition Check Styles (Reuse logic for Login) */
+.password-conditions-c {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    /* Space before submit button */
+}
+
+.condition-item-c {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    /* Slightly larger for LoginC scale */
+    color: #94a3b8;
+    transition: all 0.2s ease;
+}
+
+.condition-item-c .dot {
+    font-size: 9px;
+}
+
+.condition-item-c.satisfied {
+    color: #10b981;
+    /* Green */
+    font-weight: 600;
+}
+
+.condition-item-c.unsatisfied {
+    color: #ef4444;
+    /* Red */
+}
+
+/* Text-based Password Feedback Styles */
+.password-conditions-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.pw-condition-text {
+    margin: 0;
+    font-size: 13px;
+    color: #94a3b8;
+    /* Default Gray */
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.pw-condition-text.satisfied {
+    color: #10b981;
+    /* Green */
+    font-weight: 600;
+}
+
+.pw-condition-text.unsatisfied {
+    color: #ef4444;
+    /* Red */
+}
+
+@media (max-width: 768px) {
+    .login-c-card {
+        padding: 40px 30px;
+        width: 90%;
+    }
+
+    .logo-image-c {
+        height: 50px;
+    }
+
+    .login-input-c {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    .login-submit-btn-c {
+        padding: 15px;
+        font-size: 16px;
+    }
+}

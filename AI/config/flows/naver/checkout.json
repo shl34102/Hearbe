@@ -1,0 +1,70 @@
+{
+    "flow_id": "naver_checkout",
+    "flow_type": "checkout",
+    "site": "naver",
+    "total_steps": 5,
+    "steps": [
+        {
+            "step_id": 1,
+            "name": "cart_confirm",
+            "prompt": "{product_name}을(를) 구매합니다. 가격은 {price}원입니다. 진행할까요?",
+            "required_fields": ["product_name", "price"],
+            "user_confirmation": true,
+            "action": null,
+            "fallback": "구매를 취소합니다.",
+            "next_step": 2
+        },
+        {
+            "step_id": 2,
+            "name": "go_to_checkout",
+            "prompt": "결제 페이지로 이동합니다.",
+            "action": {
+                "tool_name": "click_element",
+                "arguments": {
+                    "selector": ".buy_btn, ._buy_button"
+                }
+            },
+            "validation": {
+                "type": "url_contains",
+                "value": "order"
+            },
+            "fallback": "결제 페이지 이동에 실패했습니다.",
+            "next_step": 3
+        },
+        {
+            "step_id": 3,
+            "name": "address_confirm",
+            "prompt": "배송지: {address}. 맞으시면 '네'라고 말씀해주세요.",
+            "required_fields": ["address"],
+            "user_confirmation": true,
+            "action": null,
+            "next_step": 4
+        },
+        {
+            "step_id": 4,
+            "name": "final_confirm",
+            "prompt": "최종 결제 금액 {total_price}원. 결제를 진행할까요?",
+            "required_fields": ["total_price"],
+            "user_confirmation": true,
+            "action": null,
+            "fallback": "결제를 취소합니다.",
+            "next_step": 5
+        },
+        {
+            "step_id": 5,
+            "name": "complete_payment",
+            "prompt": "결제가 완료되었습니다.",
+            "action": {
+                "tool_name": "click_element",
+                "arguments": {
+                    "selector": ".pay_submit, .order_btn"
+                }
+            },
+            "validation": {
+                "type": "selector_exists",
+                "selector": ".complete, .success"
+            },
+            "fallback": "결제 처리 중 문제가 발생했습니다."
+        }
+    ]
+}

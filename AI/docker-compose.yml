@@ -1,0 +1,42 @@
+# AI/docker-compose.yml
+version: "3.8"
+
+services:
+  ai-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hearbe
+    image: ai-ai-server:${TAG:-latest}
+    ports:
+      - "8000:8000"
+    environment:
+      - GMS_API_KEY=${GMS_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/config/google-service-account.json
+      - HF_HUB_DISABLE_XET=1
+
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+      - ./flows:/app/flows
+      - huggingface-cache:/root/.cache/huggingface
+      - paddleocr-cache:/root/.paddleocr
+    command:
+      ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  huggingface-cache:
+  paddleocr-cache:

@@ -1,0 +1,5 @@
+﻿기능,HTTP 메서드,API Path,Request,Response
+즐겨찾기 등록,POST,/favorites,"RequestFavorites (https://www.notion.so/RequestFavorites-2ed9119109f1805a8e2ade2607381e67?pvs=21) ","ResponseFavorites (https://www.notion.so/ResponseFavorites-2ed9119109f180a08d63f56187dafa45?pvs=21) "
+즐겨찾기 목록,GET,/favorites,,"ResponseFavoriteList (https://www.notion.so/ResponseFavoriteList-2ed9119109f1804392f0fa7cb85a0958?pvs=21) "
+즐겨찾기 실행,POST,/favorites/{id}/execute,"RequestExecute (https://www.notion.so/RequestExecute-2ed9119109f1807f8081f3cc52517a6d?pvs=21) ","ResponseExecute (https://www.notion.so/ResponseExecute-2ed9119109f18091aeb8c7ef8bb3e463?pvs=21) "
+즐겨찾기 해제,DELETE,/favorites/{id},,

@@ -1,0 +1,13 @@
+# Hearbe C login/signup parsing test
+#
+# Goals
+# - Navigate to /C/login
+# - Parse login credentials and submit
+# - Open signup page and parse signup fields/actions
+#
+# delay_ms=15000
+# extra_runtime_sec=60
+
+C형 선택
+회원가입
+

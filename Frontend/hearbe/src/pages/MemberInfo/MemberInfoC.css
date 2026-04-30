@@ -1,0 +1,348 @@
+.info-list-full {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-row-full {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.8rem 0;
+}
+
+.row-icon-circle {
+    width: 3rem;
+    height: 3rem;
+    background-color: #f9fafb;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+}
+
+.row-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.row-label {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #9ca3af;
+}
+
+.row-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #374151;
+}
+
+.small-action-btn {
+    background: #f5f3ff;
+    color: #7c3aed;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.8rem;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.withdraw-link {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.member-info-page-c {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-info-main-c {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.member-info-content-c {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-section-c {
+    background: white;
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.profile-avatar-c {
+    width: 4.5rem;
+    height: 4.5rem;
+    background: #f5f3ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.profile-details-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.profile-name-c {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.profile-badge-c {
+    background: #7c3aed;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.info-card-c {
+    background: white;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.info-card-title-c {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 1.2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.info-card-title-c::before {
+    content: '';
+    width: 4px;
+    height: 1.4rem;
+    background: #7c3aed;
+    border-radius: 2px;
+}
+
+.info-list-c {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-row-c {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem;
+    background: #f9fafb;
+    border-radius: 1rem;
+    transition: all 0.2s;
+}
+
+.info-row-c:hover {
+    background: #f5f3ff;
+}
+
+.info-icon-c {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: white;
+    border-radius: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B5CF6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-content-c {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.info-label-c {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #9ca3af;
+}
+
+.info-value-c {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.action-btn-c {
+    background: #f5f3ff;
+    color: #7c3aed;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.8rem;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn-c:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+.withdraw-section-c {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0.5rem;
+}
+
+.withdraw-btn-c {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.withdraw-btn-c:hover {
+    color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .member-info-header-c {
+        padding: 15px 20px;
+    }
+
+    .header-left-c {
+        gap: 15px;
+    }
+
+    .back-btn-c {
+        width: 44px;
+        height: 44px;
+    }
+
+    .title-icon-box-c {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .title-text-c h1 {
+        font-size: 22px;
+    }
+
+    .subtitle-c {
+        font-size: 13px;
+    }
+
+    .header-right-c {
+        gap: 15px;
+    }
+
+    .nav-icon-c {
+        width: 48px;
+        height: 48px;
+    }
+
+    .nav-item-c span {
+        font-size: 12px;
+    }
+
+    .member-info-main-c {
+        padding: 40px 15px;
+    }
+
+    .profile-section-c {
+        padding: 30px 20px;
+        border-radius: 30px;
+    }
+
+    .profile-avatar-c {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-name-c {
+        font-size: 28px;
+    }
+
+    .profile-badge-c {
+        font-size: 16px;
+        padding: 6px 16px;
+    }
+
+    .info-card-c {
+        padding: 30px 20px;
+        border-radius: 30px;
+    }
+
+    .info-card-title-c {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .info-row-c {
+        padding: 16px;
+    }
+
+    .info-icon-c {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+    }
+
+    .info-label-c {
+        font-size: 14px;
+    }
+
+    .info-value-c {
+        font-size: 18px;
+    }
+
+    .action-btn-c {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "page_type": "orderdetail",
+  "url_pattern": "mc\\.coupang\\.com/ssr/desktop/order/\\d+",
+  "description": "쿠팡 주문 상세 페이지",
+  "selectors": {
+    "search_input": "#headerSearchKeyword",
+    "search_button": "#headerSearchBtn",
+    "add_to_cart": "button:has-text('장바구니 담기')",
+    "track_delivery": "button:has-text('배송 조회')",
+    "exchange_return": "button:has-text('교환, 반품 신청')",
+    "write_review": "button:has-text('리뷰 작성하기')",
+    "cash_receipt": "button:has-text('현금영수증')",
+    "transaction_statement": "button:has-text('거래명세서')",
+    "back_to_orderlist": "button:has-text('주문목록 돌아가기')",
+    "delete_order": "button:has-text('주문내역 삭제')",
+    "cancel_entry": "button:has-text('주문 · 배송 취소'), button:has-text('주문 배송 취소'), a:has-text('주문 · 배송 취소'), button:has-text('주문 취소'), button:has-text('주문취소')",
+    "cancel_order": "button.sc-1k9quwu-0.hEHzLT.sc-gnmni8-8.kiiuoA, button:has-text('주문취소'), button:has-text('주문 취소')",
+    "cancel_confirm": "div[role='dialog'] button:has-text('확인'), div[role='dialog'] button:has-text('취소하기')"
+  }
+}

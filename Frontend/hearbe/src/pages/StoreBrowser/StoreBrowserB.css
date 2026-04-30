@@ -1,0 +1,433 @@
+.store-container {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    background-color: #f2f2f2;
+}
+
+/* Back Button Component Override */
+.store-container .global-back-button {
+    left: clamp(16px, 4vw, 32px);
+    top: clamp(20px, 5vw, 40px);
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
+}
+
+.store-container .global-back-button.navy .back-arrow-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.store-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Hamburger & Menu --- */
+.hamburger-overlay {
+    position: fixed;
+    bottom: clamp(20px, 5vw, 40px);
+    left: clamp(16px, 4vw, 32px);
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
+    background-color: #141C29;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 1.5vw, 12px);
+    cursor: pointer;
+    box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(5px, 1.5vw, 10px) rgba(0, 0, 0, 0.5);
+    z-index: 1200;
+}
+
+.hamburger-line {
+    width: clamp(25px, 6vw, 50px);
+    height: clamp(3px, 0.8vw, 6px);
+    background-color: #FFF064;
+    border-radius: clamp(2px, 0.4vw, 3px);
+}
+
+/* Menu Bubble */
+.menu-bubble {
+    position: fixed;
+    bottom: clamp(100px, 20vw, 150px);
+    left: clamp(16px, 4vw, 32px);
+    background-color: #141C29;
+    border-radius: clamp(12px, 3vw, 24px);
+    padding: clamp(16px, 3vw, 24px);
+    box-shadow: 0 clamp(4px, 1vw, 8px) clamp(15px, 4vw, 30px) rgba(0, 0, 0, 0.6);
+    z-index: 1205;
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #FFF064 transparent;
+}
+
+.menu-bubble::-webkit-scrollbar {
+    width: 6px;
+}
+
+.menu-bubble::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.menu-bubble::-webkit-scrollbar-thumb {
+    background-color: #FFF064;
+    border-radius: 20px;
+    border: 2px solid #141C29;
+}
+
+/* Speech Bubble Tail */
+.menu-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    /* Adjust based on tail size */
+    left: 40px;
+    /* Adjust to align with hamburger button */
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: #141C29 transparent;
+    display: block;
+    width: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: bold;
+    color: #FFF064;
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2.5vw, 16px);
+    padding: clamp(4px, 1vw, 8px) 0;
+    cursor: pointer;
+    border: none !important;
+    background: none !important;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-icon {
+    width: clamp(24px, 6vw, 36px);
+    height: clamp(24px, 6vw, 36px);
+    object-fit: contain;
+}
+
+.menu-text {
+    white-space: nowrap;
+}
+
+/* Close Button in Bubble */
+.close-bubble {
+    position: absolute;
+    top: clamp(-12px, -3vw, -24px);
+    right: clamp(-12px, -3vw, -24px);
+    background: #141C29;
+    color: #FFF064;
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: clamp(24px, 6vw, 40px);
+    cursor: pointer;
+    box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(5px, 1.5vw, 10px) rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+/* Close X inside Hamburger (if used) */
+.close-x {
+    font-size: 50px;
+    font-weight: 900;
+    color: #FFF064;
+    line-height: 1;
+}
+
+/* --- Sharing Mode UI --- */
+.sharing-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: clamp(8px, 2vw, 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(8px, 2vw, 16px);
+    z-index: 1100;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+    pointer-events: none;
+}
+
+/* Making children clickable */
+.sharing-pill,
+.participant-pill {
+    pointer-events: auto;
+    background-color: rgba(20, 28, 41, 0.9);
+    color: #FFF064;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.p-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.sharing-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #141C29;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    z-index: 1300;
+}
+
+.sharing-btn {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #FFF064;
+    font-size: 30px;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    cursor: pointer;
+}
+
+.s-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.sharing-btn.highlight {
+    background-color: #FFF064;
+    color: #141C29;
+    padding: 10px 40px;
+    border-radius: 20px;
+    flex-direction: row;
+    height: 100px;
+    align-self: center;
+}
+
+.sharing-btn.primary {
+    /* Special style for 'Buy' etc */
+    font-weight: bold;
+}
+
+/* Share Modal (Popup) */
+.share-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-modal-content {
+    width: 900px;
+    /* Wider */
+    background-color: #141C29;
+    /* Navy Background */
+    border-radius: 50px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    border: 4px solid #141C29;
+    /* Edge matching */
+}
+
+.share-modal-title {
+    font-size: 70px;
+    font-weight: 900;
+    color: #FFF064;
+    /* Yellow Title */
+}
+
+.share-code-box {
+    border: 4px solid #FFF064;
+    border-radius: 40px;
+    padding: 20px 100px;
+    font-size: 100px;
+    font-weight: 900;
+    color: #FFF064;
+    margin: 20px 0;
+    letter-spacing: 20px;
+}
+
+.share-modal-desc {
+    font-size: 45px;
+    color: #FAFAFA;
+    /* White text */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.share-modal-btns {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
+}
+
+.sm-btn {
+    padding: 20px 60px;
+    border-radius: 20px;
+    border: 4px solid #FFF064;
+    font-size: 50px;
+    font-weight: 900;
+    cursor: pointer;
+    min-width: 250px;
+}
+
+.sm-btn.cancel {
+    background-color: transparent;
+    color: #FAFAFA;
+}
+
+.sm-btn.confirm {
+    background-color: #FFF064;
+    color: #141C29;
+}
+
+/* Product Input Modal Styles */
+.add-cart-modal {
+    max-width: 700px;
+}
+
+.product-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.product-input {
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 3px solid #FFF064;
+    background-color: transparent;
+    color: #FAFAFA;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+.product-input::placeholder {
+    color: rgba(250, 250, 250, 0.5);
+}
+
+.product-input:focus {
+    outline: none;
+    border-color: #FFF064;
+    background-color: rgba(255, 240, 100, 0.1);
+}
+
+/* Iframe Blocked Message (Coupang) */
+.iframe-blocked-message {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E2A3A;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.blocked-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.blocked-logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.blocked-content h2 {
+    font-size: clamp(24px, 6vw, 40px);
+    margin: 0;
+    line-height: 1.4;
+    color: #FFF064;
+}
+
+.blocked-content p {
+    font-size: clamp(16px, 4vw, 24px);
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.open-new-window-btn {
+    margin-top: 20px;
+    padding: 15px 40px;
+    background-color: #FFF064;
+    color: #141C29;
+    font-size: clamp(20px, 5vw, 30px);
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.open-new-window-btn:active {
+    transform: scale(0.95);
+}
+
+/* Hide "open in new tab" notice on share screen */
+.store-container.hide-new-tab-notice .iframe-blocked-message,
+.store-container.hide-new-tab-notice .open-new-window-btn {
+    display: none !important;
+}

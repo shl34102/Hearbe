@@ -1,0 +1,19 @@
+{
+  "site_id": "coupang",
+  "name": "쿠팡",
+  "domains": [
+    "coupang.com",
+    "www.coupang.com",
+    "login.coupang.com",
+    "cart.coupang.com",
+    "mc.coupang.com",
+    "rocketpay.coupang.com"
+  ],
+  "urls": {
+    "home": "https://www.coupang.com/",
+    "login": "https://login.coupang.com/login/login.pang",
+    "cart": "https://cart.coupang.com/cartView.pang",
+    "mypage": "https://mc.coupang.com/ssr/desktop/order/list"
+  },
+  "pages": ["main", "search", "product", "cart"]
+}

@@ -1,0 +1,18 @@
+# Coupang: search flow regression test (from Hearbe mall)
+#
+# Goals
+# - Navigate to Coupang from Hearbe mall
+# - Search works
+# - Search results are read (auto or on-demand)
+# - "2 more", "cheapest", "read again" intents behave reasonably
+#
+# Notes
+# - Keep this file deterministic. Do not proceed to payment.
+
+쿠팡으로 이동
+생수 검색해줘
+검색 결과 읽어줘
+2개 더 읽어줘
+가장 싼 상품 찾아줘
+검색 결과 다시 읽어줘
+

@@ -1,0 +1,57 @@
+# MCP Desktop App Dependencies
+
+# ----------------------------
+# Audio / Hotkeys
+# ----------------------------
+# Prefer sounddevice (PortAudio backend, wheels are usually more available)
+sounddevice>=0.4.6
+
+# If you must keep PyAudio, make it optional per-OS and document system deps.
+# pyaudio is painful on linux without portaudio dev headers.
+pyaudio>=0.2.13; platform_system == "Windows"
+
+keyboard>=0.13.5; platform_system == "Windows"     # Windows only (Linux needs root access / 제한 많음)
+pynput>=1.7.6                                      # Cross-platform (X11/Wayland 환경 따라 제약)
+
+# ----------------------------
+# Networking
+# ----------------------------
+websockets>=12.0
+aiohttp>=3.9.0
+
+# ----------------------------
+# Browser automation
+# ----------------------------
+playwright>=1.40.0
+psutil>=5.9.0
+
+# ----------------------------
+# UI / Tray
+# ----------------------------
+pystray>=0.19.0
+Pillow>=10.0.0
+
+# ----------------------------
+# Config
+# ----------------------------
+python-dotenv>=1.0.0
+
+# ----------------------------
+# Testing
+# ----------------------------
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# ----------------------------
+# Dev tools
+# ----------------------------
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# ----------------------------
+# Packaging
+# ----------------------------
+pyinstaller>=6.0.0; platform_system == "Windows"
+pyinstaller>=6.0.0; platform_system == "Linux"

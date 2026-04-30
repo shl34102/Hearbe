@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HearBe - 사용자 (로컬 테스트)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .local-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .code-display {
+            background: #f7f7f7;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .code-display h2 {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .code-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+            letter-spacing: 8px;
+            font-family: "Courier New", monospace;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px 0;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #e53e3e;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        .status.success {
+            background: #c6f6d5;
+            color: #276749;
+        }
+
+        #myVideo {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+            background: #000;
+        }
+
+        .log {
+            background: #f7f7f7;
+            padding: 15px;
+            border-radius: 10px;
+            max-height: 150px;
+            overflow-y: auto;
+            font-size: 12px;
+            font-family: monospace;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📱 HearBe - 사용자 <span class="local-badge">LOCAL</span></h1>
+        <p class="subtitle">보호자에게 화면을 공유하세요</p>
+
+        <div class="code-display" id="codeDisplay" style="display: none;">
+            <h2>공유 코드</h2>
+            <div class="code-number" id="shareCode">----</div>
+            <p style="margin-top: 10px; color: #666;">이 코드를 보호자에게 알려주세요</p>
+        </div>
+
+        <div class="status" id="status">화면 공유를 시작하려면 버튼을 클릭하세요</div>
+
+        <button class="btn-primary" id="startBtn">화면 공유 시작</button>
+        <button class="btn-danger" id="stopBtn" style="display: none;">공유 종료</button>
+
+        <video id="myVideo" autoplay playsinline muted style="display: none;"></video>
+
+        <div class="log" id="logBox"></div>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script>
+        const SERVER = {
+            host: "localhost",
+            port: 9000,
+            path: "/hearbe-peer",
+            secure: false,
+            config: { iceServers: [{ urls: "stun:stun.l.google.com:19302" }] }
+        };
+
+        const ui = {
+            codeDisplay: document.getElementById("codeDisplay"),
+            shareCode: document.getElementById("shareCode"),
+            status: document.getElementById("status"),
+            startBtn: document.getElementById("startBtn"),
+            stopBtn: document.getElementById("stopBtn"),
+            myVideo: document.getElementById("myVideo"),
+            logBox: document.getElementById("logBox")
+        };
+
+        let peer = null;
+        let localStream = null;
+        let currentCall = null;
+        let myShareCode = null;
+
+        function log(message) {
+            const ts = new Date().toLocaleTimeString();
+            ui.logBox.innerHTML = `[${ts}] ${message}<br>` + ui.logBox.innerHTML;
+        }
+
+        function setStatus(message, isSuccess = false) {
+            ui.status.textContent = message;
+            ui.status.className = isSuccess ? "status success" : "status";
+        }
+
+        function generateCode() {
+            return Math.floor(1000 + Math.random() * 9000).toString();
+        }
+
+        async function startScreenShare() {
+            try {
+                const screenVideo = await navigator.mediaDevices.getDisplayMedia({
+                    video: { cursor: "always" },
+                    audio: false
+                });
+
+                let audioTracks = [];
+                try {
+                    const micAudio = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    audioTracks = micAudio.getAudioTracks();
+                    log("✅ 마이크 권한 획득");
+                } catch (e) {
+                    log("⚠️ 마이크 권한 없음 (화면만 공유)");
+                }
+
+                localStream = new MediaStream([
+                    ...screenVideo.getVideoTracks(),
+                    ...audioTracks
+                ]);
+
+                ui.myVideo.srcObject = localStream;
+                ui.myVideo.style.display = "block";
+                log("화면 공유 시작됨");
+
+                myShareCode = generateCode();
+                ui.shareCode.textContent = myShareCode;
+                ui.codeDisplay.style.display = "block";
+
+                const peerId = `share-${myShareCode}-user`;
+                peer = new Peer(peerId, SERVER);
+
+                peer.on("open", (id) => {
+                    log(`✅ Peer 연결: ${id}`);
+                    setStatus("✅ 화면 공유 중... 보호자 접속 대기", true);
+                });
+
+                peer.on("connection", (conn) => {
+                    log(`🔔 보호자 입장 (${conn.peer})`);
+                    setStatus("보호자에게 영상 전화 거는 중...");
+
+                    setTimeout(() => {
+                        const call = peer.call(conn.peer, localStream);
+                        setupCall(call);
+                    }, 500);
+                });
+
+                peer.on("error", (err) => {
+                    log(`❌ Peer 에러: ${err.message}`);
+                });
+
+                ui.startBtn.style.display = "none";
+                ui.stopBtn.style.display = "block";
+
+                localStream.getVideoTracks()[0].onended = () => {
+                    stopScreenShare();
+                };
+
+            } catch (err) {
+                log(`❌ 화면 공유 실패: ${err.message}`);
+                setStatus("❌ 화면 공유 권한이 거부되었습니다");
+            }
+        }
+
+        function setupCall(call) {
+            currentCall = call;
+
+            call.on("stream", (remoteStream) => {
+                log("🎤 보호자 음성 연결됨");
+                const audio = new Audio();
+                audio.srcObject = remoteStream;
+                audio.play().catch(e => log("오디오 재생 실패"));
+                setStatus("✅ 보호자가 화면을 보고 있습니다", true);
+            });
+
+            call.on("close", () => {
+                log("보호자 연결 종료");
+                setStatus("보호자 연결 종료");
+            });
+
+            call.on("error", (e) => log(`통화 에러: ${e.message}`));
+        }
+
+        function stopScreenShare() {
+            if (localStream) {
+                localStream.getTracks().forEach(t => t.stop());
+                localStream = null;
+            }
+            if (currentCall) {
+                currentCall.close();
+            }
+            if (peer) {
+                peer.destroy();
+                peer = null;
+            }
+            ui.myVideo.style.display = "none";
+            ui.codeDisplay.style.display = "none";
+            ui.startBtn.style.display = "block";
+            ui.stopBtn.style.display = "none";
+            setStatus("화면 공유가 종료되었습니다");
+            log("화면 공유 종료");
+        }
+
+        ui.startBtn.addEventListener("click", startScreenShare);
+        ui.stopBtn.addEventListener("click", stopScreenShare);
+
+        window.addEventListener("beforeunload", () => {
+            stopScreenShare();
+        });
+
+        log(`🏠 로컬 서버: localhost:9000/hearbe-peer`);
+    </script>
+</body>
+
+</html>

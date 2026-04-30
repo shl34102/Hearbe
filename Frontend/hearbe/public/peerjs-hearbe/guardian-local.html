@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HearBe - 보호자 (로컬 테스트)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #f5576c;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .local-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        input {
+            flex: 1;
+            padding: 16px;
+            font-size: 24px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            text-align: center;
+            font-family: "Courier New", monospace;
+            letter-spacing: 4px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #f5576c;
+        }
+
+        button {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #f5576c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e14858;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .btn-danger {
+            background: #718096;
+            color: white;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-danger:hover {
+            background: #4a5568;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status {
+            background: #fff5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        .status.success {
+            background: #c6f6d5;
+            color: #276749;
+        }
+
+        #remoteVideo {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+            background: #000;
+            display: none;
+        }
+
+        .log {
+            background: #f7f7f7;
+            padding: 15px;
+            border-radius: 10px;
+            max-height: 120px;
+            overflow-y: auto;
+            font-size: 12px;
+            font-family: monospace;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .mic-status {
+            background: #fff;
+            border: 2px solid #f5576c;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            color: #f5576c;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🛡️ HearBe - 보호자 <span class="local-badge">LOCAL</span></h1>
+        <p class="subtitle">사용자의 화면을 보며 도와주세요</p>
+
+        <div class="input-group">
+            <input type="text" id="codeInput" placeholder="코드 입력 (4자리)" maxlength="4" />
+            <button class="btn-primary" id="joinBtn">입장하기</button>
+        </div>
+
+        <div class="mic-status" id="micStatus" style="display: none;">
+            🎤 마이크 켜짐 - 사용자가 들을 수 있습니다
+        </div>
+
+        <div class="status" id="status">사용자에게 받은 코드를 입력하세요</div>
+
+        <button class="btn-danger" id="leaveBtn" style="display: none;">나가기</button>
+
+        <video id="remoteVideo" autoplay playsinline></video>
+
+        <div class="log" id="logBox"></div>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script>
+        const SERVER = {
+            host: "localhost",
+            port: 9000,
+            path: "/hearbe-peer",
+            secure: false,
+            config: { iceServers: [{ urls: "stun:stun.l.google.com:19302" }] }
+        };
+
+        const ui = {
+            codeInput: document.getElementById("codeInput"),
+            joinBtn: document.getElementById("joinBtn"),
+            leaveBtn: document.getElementById("leaveBtn"),
+            micStatus: document.getElementById("micStatus"),
+            status: document.getElementById("status"),
+            remoteVideo: document.getElementById("remoteVideo"),
+            logBox: document.getElementById("logBox")
+        };
+
+        let peer = null;
+        let myAudioStream = null;
+        let currentCall = null;
+        let conn = null;
+
+        function log(message) {
+            const ts = new Date().toLocaleTimeString();
+            ui.logBox.innerHTML = `[${ts}] ${message}<br>` + ui.logBox.innerHTML;
+        }
+
+        function setStatus(message, isSuccess = false) {
+            ui.status.textContent = message;
+            ui.status.className = isSuccess ? "status success" : "status";
+        }
+
+        async function joinSession() {
+            const code = ui.codeInput.value.trim();
+            if (!code || code.length !== 4) {
+                setStatus("❌ 4자리 코드를 입력하세요");
+                return;
+            }
+
+            try {
+                setStatus("마이크 권한 요청 중...");
+                myAudioStream = await navigator.mediaDevices.getUserMedia({
+                    video: false,
+                    audio: true
+                });
+                log("✅ 마이크 활성화");
+                ui.micStatus.style.display = "block";
+
+                const peerId = `share-${code}-guardian`;
+                peer = new Peer(peerId, SERVER);
+
+                peer.on("open", (id) => {
+                    log(`✅ Peer 연결: ${id}`);
+
+                    const userId = `share-${code}-user`;
+                    log(`📡 사용자에게 접속 신호 전송...`);
+                    conn = peer.connect(userId, { reliable: true });
+
+                    conn.on('open', () => {
+                        log("✅ 접속 신호 도달. 전화 대기 중...");
+                        setStatus("사용자의 영상 전화 대기 중...");
+                    });
+
+                    conn.on('error', (e) => log(`❌ 접속 실패: ${e}`));
+                });
+
+                peer.on("call", (call) => {
+                    log("📞 사용자로부터 영상 전화 수신!");
+
+                    call.answer(myAudioStream);
+                    currentCall = call;
+
+                    call.on("stream", (remoteStream) => {
+                        log("🎥 화면 수신됨!");
+                        ui.remoteVideo.srcObject = remoteStream;
+                        ui.remoteVideo.style.display = "block";
+                        setStatus("✅ 연결됨! 사용자의 화면을 보고 있습니다", true);
+                    });
+
+                    call.on("close", () => {
+                        log("사용자 연결 종료");
+                        leaveSession();
+                    });
+                });
+
+                peer.on("error", (err) => {
+                    log(`❌ Peer 에러: ${err.message}`);
+                    setStatus("❌ 연결 실패 (사용자가 코드를 생성했나요?)");
+                });
+
+                ui.codeInput.disabled = true;
+                ui.joinBtn.disabled = true;
+                ui.leaveBtn.style.display = "block";
+
+            } catch (err) {
+                log(`❌ 마이크 권한 거부: ${err.message}`);
+                setStatus("❌ 마이크 권한이 필요합니다");
+            }
+        }
+
+        function leaveSession() {
+            if (myAudioStream) {
+                myAudioStream.getTracks().forEach(t => t.stop());
+                myAudioStream = null;
+            }
+            if (currentCall) {
+                currentCall.close();
+                currentCall = null;
+            }
+            if (peer) {
+                peer.destroy();
+                peer = null;
+            }
+            ui.remoteVideo.style.display = "none";
+            ui.micStatus.style.display = "none";
+            ui.codeInput.disabled = false;
+            ui.codeInput.value = "";
+            ui.joinBtn.disabled = false;
+            ui.leaveBtn.style.display = "none";
+            setStatus("연결이 종료되었습니다");
+            log("세션 종료");
+        }
+
+        ui.joinBtn.addEventListener("click", joinSession);
+        ui.leaveBtn.addEventListener("click", leaveSession);
+
+        window.addEventListener("beforeunload", () => {
+            leaveSession();
+        });
+
+        log(`🏠 로컬 서버: localhost:9000/hearbe-peer`);
+    </script>
+</body>
+
+</html>
